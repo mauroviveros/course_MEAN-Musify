@@ -1,0 +1,23 @@
+{
+  "name": "course_mean-musify",
+  "description": "MEAN-Musify: Desarrollo web con JavaScript, Angular, NodeJS y MongoDB",
+  "author": "Mauro Daniel Viveros <maurod.viveros@gmail.com> (TRY Ubbe)",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "version": "git add CHANGELOG.md",
+    "postversion": "git push origin master && git push origin --tags",
+    "patch": "changelog -p && npm version patch -f",
+    "minor": "changelog -m && npm version minor -f",
+    "major": "changelog -M && npm version major -f",
+    "pull": "git pull origin master && git pull origin --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maurodviveros/course_MEAN-Musify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maurodviveros/course_MEAN-Musify/issues"
+  },
+  "homepage": "https://github.com/maurodviveros/course_MEAN-Musify#readme"
+}
