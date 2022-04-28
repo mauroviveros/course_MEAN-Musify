@@ -1,6 +1,7 @@
 'use strict';
 
 const bcrypt = require('bcrypt-nodejs');
+const JWT = require('./../services/jwt');
 const User = require('./../models/user');
 
 function pruebas(req, res){
@@ -51,7 +52,7 @@ function loginUser(req, res){
       bcrypt.compare(password, userDB.password, function(err, check){
         if(!check) res.status(403).send({ message: "Contraseña incorrecta" });
         else if(err) res.status(500).send({ message: "Error al obtener el usuario" });
-        else if(params.hash) res.status(200).send({ token: "userDBToken" });
+        else if(params.hash) res.status(200).send({ token: JWT.createToken(userDB) });
         else res.status(200).send({ user: userDB });
       });
     }
