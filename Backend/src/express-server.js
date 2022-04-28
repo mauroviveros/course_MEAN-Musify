@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const APP = express();
 
-// const univerapp_routes = require('./univerapp/routes');
+const user_routes = require('./routes/user');
 
 APP.use(bodyParser.urlencoded({ extended: false }))
 APP.use(bodyParser.json())
@@ -19,7 +19,8 @@ APP.use(bodyParser.json())
 // });
 
 // Cargas de Rutas Base
-// APP.use('/api', univerapp_routes);
+APP.use('/api', user_routes);
+
 APP.get("/pruebas", function(req, res){
     res.status(200).send({ message: "Bienvenido a Musify" });
 });
