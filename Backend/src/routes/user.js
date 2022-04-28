@@ -2,12 +2,13 @@
 
 const express = require('express');
 
-const UserCtrl = require("./../controllers/user");
+const UserCtrl = require('./../controllers/user');
+const auth_md = require('./../middlewares/authenticated');
 
 
 const API = express.Router();
 
-API.get('/test', UserCtrl.pruebas);
+API.get('/test', auth_md.ensureAuth, UserCtrl.pruebas);
 API.post('/register', UserCtrl.saveUser);
 API.post('/login', UserCtrl.loginUser);
 

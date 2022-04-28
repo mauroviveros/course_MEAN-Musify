@@ -17,7 +17,7 @@ function createToken(user){
     exp: moment().add(30, 'days').unix()
   };
 
-  return JWT.encode(payload, process.env.JWT_SECRET);
+  return JWT.encode(payload, process.env["JWT_SECRET"]);
 };
 
 
