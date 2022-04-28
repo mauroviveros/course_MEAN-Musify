@@ -22,8 +22,8 @@ APP.listen(PORT, ()=>{
 
 // Inicialización a la conexión MongoDB
 MONGO.then(()=>{
-    let MongoDB = `${colors.grey('Mongo')}${colors.brightGreen('DB')}`;
-    console.log(`${MongoDB}: ${colors.green('Conectado')}`);
+  let MongoDB = `${colors.grey('Mongo')}${colors.brightGreen('DB')}`;
+  console.log(`${MongoDB}: ${colors.green('Conectado')}`);
 }).catch((error)=>{
-    console.log(error);
+  console.log(error);
 });
