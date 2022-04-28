@@ -15,7 +15,7 @@ function saveUser(req, res){
 
   user.name = params.name;
   user.surname = params.surname;
-  user.email = params.email;
+  user.email = !!params.email ? params.email.toLowerCase() : undefined;
   user.role = "ROLE_USER";
 
   if(!user.name || !user.surname || !user.email){
@@ -38,7 +38,28 @@ function saveUser(req, res){
   };
 };
 
+function loginUser(req, res){
+  const params = req.body;
+
+  const email = !!params.email ? params.email.toLowerCase() : undefined;
+  const password = params.password;
+
+  User.findOne({ email }, function(err, userDB){
+    if(err) res.status(500).send({ message: "Error al obtener el usuario" });
+    else if(!userDB) res.status(400).send({ message: "No existe el usuario" });
+    else{
+      bcrypt.compare(password, userDB.password, function(err, check){
+        if(!check) res.status(403).send({ message: "Contraseña incorrecta" });
+        else if(err) res.status(500).send({ message: "Error al obtener el usuario" });
+        else if(params.hash) res.status(200).send({ token: "userDBToken" });
+        else res.status(200).send({ user: userDB });
+      });
+    }
+  })
+};
+
 module.exports = {
     pruebas,
-    saveUser
+    saveUser,
+    loginUser
 };
