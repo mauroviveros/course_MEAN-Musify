@@ -1,3 +1,9 @@
+#### 0.0.3 (2022-05-14)
+
+##### Bug Fixes
+
+* add .vscode ([e910dbf2](https://github.com/maurodviveros/course_MEAN-Musify/commit/e910dbf2f79178915a46159b22e194a3b9d4acc2))
+
 #### 0.0.2 (2022-04-28)
 
 ##### New Features
