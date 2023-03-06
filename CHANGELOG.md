@@ -1,3 +1,31 @@
+#### 0.0.4 (2023-03-06)
+
+##### Build System / Dependencies
+
+*  add configFiles ([10a06caf](https://github.com/maurodviveros/course_MEAN-Musify/commit/10a06cafbca68f170a4b73cd287cc20d77ab8da8))
+
+##### Documentation Changes
+
+*  add setup docs ([9cb9893c](https://github.com/maurodviveros/course_MEAN-Musify/commit/9cb9893c8f3348c8bb00e2f6a1fe7d91cb67986f))
+
+##### New Features
+
+*  24. Conseguir la imagen del usuario ([d8cab011](https://github.com/maurodviveros/course_MEAN-Musify/commit/d8cab011a68301e9336361bcab017196b83e98cd))
+*  23. Subir el avatar del usuario ([2e4b884c](https://github.com/maurodviveros/course_MEAN-Musify/commit/2e4b884c573331e434b8bd705b79ac6b6df58164))
+*  22. Actualizar un usuario ([a896ffb8](https://github.com/maurodviveros/course_MEAN-Musify/commit/a896ffb837c0fe0992a8e6d2f4800538dc867a0f))
+
+##### Bug Fixes
+
+*  translate backend files ([8183fa87](https://github.com/maurodviveros/course_MEAN-Musify/commit/8183fa875acca4e17cb581856ae724e3602dd6d5))
+
+##### Performance Improvements
+
+*  remove test api ([9311f4b4](https://github.com/maurodviveros/course_MEAN-Musify/commit/9311f4b4aefdf131beb2313610eb7f96146d8ee0))
+
+##### Refactors
+
+*  update nodejs version ([5786f0af](https://github.com/maurodviveros/course_MEAN-Musify/commit/5786f0af43105d47e1d17b11da9da4d52a81b98f))
+
 #### 0.0.3 (2022-05-14)
 
 ##### Bug Fixes
