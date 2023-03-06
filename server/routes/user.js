@@ -1,15 +1,17 @@
-'use strict';
+"use strict";
 
-const express = require('express');
+const express = require("express");
 
-const UserCtrl = require('./../controllers/user');
-const auth_md = require('./../middlewares/authenticated');
+const UserCtrl = require("./../controllers/user");
+const auth_md = require("./../middlewares/authenticated");
 
 
 const API = express.Router();
 
-API.get('/test', auth_md.ensureAuth, UserCtrl.pruebas);
-API.post('/register', UserCtrl.saveUser);
-API.post('/login', UserCtrl.loginUser);
+API.get("/test", auth_md.ensureAuth, UserCtrl.pruebas);
+API.post("/register", UserCtrl.saveUser);
+API.post("/login", UserCtrl.loginUser);
+
+API.put("/user/:_id", auth_md.ensureAuth, UserCtrl.updateUser)
 
 module.exports = API;

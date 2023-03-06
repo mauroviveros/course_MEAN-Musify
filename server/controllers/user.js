@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-const bcrypt = require('bcrypt');
-const JWT = require('./../services/jwt');
-const User = require('./../models/user');
+const bcrypt = require("bcrypt");
+const JWT = require("./../services/jwt");
+const User = require("./../models/user");
 
 function pruebas(req, res){
   res.status(200).send({
@@ -59,8 +59,20 @@ async function loginUser(req, res){
 
 };
 
+async function updateUser(req, res){
+  const userID  = req.params._id;
+
+  try{
+    const userUPD = await User.findByIdAndUpdate(userID, req.body);
+    return res.status(200).send({ user: userUPD });
+  } catch(error){
+    return res.status(500).send({ message: "Error al actualizar el usuario", error });
+  }
+};
+
 module.exports = {
     pruebas,
     saveUser,
-    loginUser
+    loginUser,
+    updateUser
 };
