@@ -1,9 +1,10 @@
 "use strict";
 
 const bcrypt = require("bcrypt");
-const JWT = require("./../services/jwt");
-const User = require("./../models/user");
-const path = require("path");
+const JWT   = require("./../services/jwt");
+const User  = require("./../models/user");
+const path  = require("path");
+const fs    = require("fs");
 
 function pruebas(req, res){
   res.status(200).send({
@@ -89,8 +90,24 @@ async function uploadImage(req, res){
     } else throw new Error("Extension del archivo no valida");
   } catch(error){
     return res.status(500).send({ message: "Error al actualizar la imagen del usuario", error: { message: error.message } });
-  }
+  };
+};
 
+async function getImage(req, res){
+  const userID = req.params._id;
+
+  try{
+    const userDB = await User.findById(userID);
+    if(!userDB) throw new Error("No existe el usuario");
+    const path_file = `./uploads/users/${userDB.image}`;
+    const imageBool = await fs.existsSync(path_file);
+
+    if(!imageBool) throw new Error("No existe la imagen");
+
+    res.sendFile(path.resolve(path_file));
+  } catch(error){
+    return res.status(500).send({ message: "Error al obtener la imagen del usuario", error: { message: error.message } });
+  }
 }
 
 module.exports = {
@@ -98,5 +115,6 @@ module.exports = {
     saveUser,
     loginUser,
     updateUser,
-    uploadImage
+    uploadImage,
+    getImage
 };
