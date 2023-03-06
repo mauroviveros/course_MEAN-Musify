@@ -10,7 +10,6 @@ const upload_md = multipart({ uploadDir: "./uploads/users" });
 
 const API = express.Router();
 
-API.get("/test", auth_md.ensureAuth, UserCtrl.pruebas);
 API.post("/register", UserCtrl.saveUser);
 API.post("/login", UserCtrl.loginUser);
 

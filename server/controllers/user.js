@@ -6,12 +6,6 @@ const User  = require("./../models/user");
 const path  = require("path");
 const fs    = require("fs");
 
-function pruebas(req, res){
-  res.status(200).send({
-    message: "Probando una acción del controllador de Usuarios del API-REST"
-  });
-};
-
 async function saveUser (req, res){
   const user = new User();
   const params = req.body;
