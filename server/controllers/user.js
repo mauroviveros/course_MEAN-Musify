@@ -3,6 +3,7 @@
 const bcrypt = require("bcrypt");
 const JWT = require("./../services/jwt");
 const User = require("./../models/user");
+const path = require("path");
 
 function pruebas(req, res){
   res.status(200).send({
@@ -46,15 +47,15 @@ async function loginUser(req, res){
 
   try{
     const userDB = await User.findOne({ email });
-    if(!userDB) throw new Error({ message: "No existe el usuario" });
+    if(!userDB) throw new Error("No existe el usuario");
 
     const check = await bcrypt.compare(password, userDB.password);
-    if(!check) throw new Error({ message: "Contraseña incorrecta" });
+    if(!check) throw new Error("Contraseña incorrecta");
 
     if(params.hash) res.status(200).send({ token: JWT.createToken(userDB) });
     else res.status(200).send({ user: userDB });
   } catch(error){
-    return res.status(500).send({ message: "Error al obtener el usuario", error });
+    return res.status(500).send({ message: "Error al obtener el usuario", error: { message: error.message } });
   };
 
 };
@@ -66,13 +67,36 @@ async function updateUser(req, res){
     const userUPD = await User.findByIdAndUpdate(userID, req.body);
     return res.status(200).send({ user: userUPD });
   } catch(error){
-    return res.status(500).send({ message: "Error al actualizar el usuario", error });
+    return res.status(500).send({ message: "Error al actualizar el usuario", error: { message: error.message } });
   }
 };
+
+async function uploadImage(req, res){
+  const userID    = req.params._id;
+  let file_name, file_ext;
+
+  try {
+    if(req.files){
+      file_name = path.basename(req.files.image.path);
+      file_ext  = path.extname(file_name);
+    } else throw new Error("No has subido ninguna imagen...");
+
+  
+
+    if(file_ext === ".png" || file_ext === ".jpg" || file_ext === ".gif"){
+      const userUPD = await User.findByIdAndUpdate(userID, { image: file_name });
+      return res.status(200).send({ user: userUPD });
+    } else throw new Error("Extension del archivo no valida");
+  } catch(error){
+    return res.status(500).send({ message: "Error al actualizar la imagen del usuario", error: { message: error.message } });
+  }
+
+}
 
 module.exports = {
     pruebas,
     saveUser,
     loginUser,
-    updateUser
+    updateUser,
+    uploadImage
 };
