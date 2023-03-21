@@ -9,7 +9,12 @@ const Song    = require("../models/song");
 
 
 async function getArtist(req, res){
-  return res.status(200).send({ message: "Metodo getArtist" });
+  try {
+    const artistDB = await Artist.findById(req.params._id);
+    return res.json(artistDB);
+  } catch (error) {
+    return res.status(error.status || 400).json(error);
+  };
 };
 
 async function uploadArtist(req, res){
@@ -19,14 +24,14 @@ async function uploadArtist(req, res){
 
   try {
     const artistStored = await artist.save();
-    return res.send({ artist: artistStored });
+    return res.json(artistStored);
   } catch (error) {
-    res.status(error.status || 400).json(error);
-  }
+    return res.status(error.status || 400).json(error);
+  };
 
-}
+};
 
 module.exports = {
   getArtist,
   uploadArtist
-}
+};
