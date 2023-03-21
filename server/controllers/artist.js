@@ -1,5 +1,6 @@
 "use strict";
 
+const mongoosePaginate = require("mongoose-paginate-v2");
 const path  = require("path");
 const fs    = require("fs");
 
@@ -17,6 +18,17 @@ async function getArtist(req, res){
   };
 };
 
+async function getArtists(req, res){
+  const page  = req.query.page  || 1;
+  const limit = req.query.limit || 10;
+  try {
+    const artistsDB = await Artist.paginate({}, { page, limit });
+    return res.json(artistsDB);
+  } catch (error) {
+    
+  }
+}
+
 async function uploadArtist(req, res){
   const params  = req.body;
   const artist    = new Artist(params);
@@ -33,5 +45,6 @@ async function uploadArtist(req, res){
 
 module.exports = {
   getArtist,
+  getArtists,
   uploadArtist
 };
