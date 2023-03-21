@@ -43,8 +43,19 @@ async function uploadArtist(req, res){
 
 };
 
+async function updateArtist(req, res){
+  try {
+    delete req.body.image;
+    const artistUpdated = await Artist.findByIdAndUpdate(req.params._id, req.body, { new: true });
+    return res.json(artistUpdated);
+  } catch (error) {
+    return res.status(error.status || 400).json(error);
+  }
+}
+
 module.exports = {
   getArtist,
   getArtists,
-  uploadArtist
+  uploadArtist,
+  updateArtist
 };

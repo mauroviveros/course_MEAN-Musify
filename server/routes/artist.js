@@ -13,4 +13,6 @@ API.get("/artists/:_id", auth_md.ensureAuth, ArtistCtrl.getArtist);
 
 API.post("/artists", auth_md.ensureAuth, ArtistCtrl.uploadArtist);
 
+API.put("/artists/:_id", auth_md.ensureAuth, ArtistCtrl.updateArtist);
+
 module.exports = API;
