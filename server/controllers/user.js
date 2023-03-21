@@ -1,10 +1,10 @@
 "use strict";
 
-const bcrypt = require("bcrypt");
-const JWT   = require("./../services/jwt");
-const User  = require("./../models/user");
-const path  = require("path");
-const fs    = require("fs");
+const bcrypt  = require("bcrypt");
+const JWT     = require("./../services/jwt");
+const User    = require("./../models/user");
+const path    = require("path");
+const fs      = require("fs");
 
 async function saveUser (req, res){
   const user = new User();
@@ -21,7 +21,6 @@ async function saveUser (req, res){
 
   if(params.password){
     try {
-      // Encriptar contraseña y guardar datos
       user.password = await bcrypt.hash(params.password, 10);
       const userStored = await user.save();
 
@@ -59,7 +58,7 @@ async function updateUser(req, res){
   const userID  = req.params._id;
 
   try{
-    const userUPD = await User.findByIdAndUpdate(userID, req.body);
+    const userUPD = await User.findByIdAndUpdate(userID, req.body, { new: true });
     return res.status(200).send({ user: userUPD });
   } catch(error){
     return res.status(500).send({ message: "Error al actualizar el usuario", error: { message: error.message } });
@@ -79,7 +78,7 @@ async function uploadImage(req, res){
   
 
     if(file_ext === ".png" || file_ext === ".jpg" || file_ext === ".gif"){
-      const userUPD = await User.findByIdAndUpdate(userID, { image: file_name });
+      const userUPD = await User.findByIdAndUpdate(userID, { image: file_name }, { new: true });
       return res.status(200).send({ user: userUPD });
     } else throw new Error("Extension del archivo no valida");
   } catch(error){
@@ -105,7 +104,6 @@ async function getImage(req, res){
 }
 
 module.exports = {
-    pruebas,
     saveUser,
     loginUser,
     updateUser,

@@ -1,7 +1,7 @@
 "use strict";
 
 const express = require("express");
-const multipart = require("connect-multiparty")
+const multipart = require("connect-multiparty");
 
 const UserCtrl = require("./../controllers/user");
 const auth_md = require("./../middlewares/authenticated");
