@@ -1,3 +1,20 @@
+## [0.0.5](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.0.4...v0.0.5) (2023-03-21)
+
+
+### Features
+
+* :heavy_plus_sign: add mongoose-paginate-v2 ([239e2d5](https://github.com/maurodviveros/course_MEAN-Musify/commit/239e2d501842fc2ecaa022cd4feaf74e842a8763))
+* :heavy_plus_sign: use conventional-changelog-cli ([4a1158d](https://github.com/maurodviveros/course_MEAN-Musify/commit/4a1158d56146f95d7cc2c377355981af7173b0ac))
+* **course:** :white_check_mark: 25. Crear el controlador y las rutas ([b6df9ec](https://github.com/maurodviveros/course_MEAN-Musify/commit/b6df9ecdeef0c963ad306bc1b4323ac3b53da479))
+* **course:** :white_check_mark: 26. Crear un artista ([507ed75](https://github.com/maurodviveros/course_MEAN-Musify/commit/507ed7509535b5f16d30ab40c368b6dadb0f3bff))
+* **course:** :white_check_mark: 27. Conseguir un artista ([4e8ba7c](https://github.com/maurodviveros/course_MEAN-Musify/commit/4e8ba7c977232fba7307a35bf048a4bf21882020))
+* **course:** :white_check_mark: 28. Listado de artistas paginado ([f92f1a6](https://github.com/maurodviveros/course_MEAN-Musify/commit/f92f1a6e592fa1add42af20eff6b177bed38c7e8))
+* **course:** :white_check_mark: 29. Actualizar artistas ([6bf09a9](https://github.com/maurodviveros/course_MEAN-Musify/commit/6bf09a91ec4f733afe6d96515a0c996c3cde50fa))
+* **course:** :white_check_mark: 30. Eliminar un artista ([0181ef1](https://github.com/maurodviveros/course_MEAN-Musify/commit/0181ef10dc4fbd36f1284ad62ebbb9d075822638))
+* **course:** :white_check_mark: 31. Métodos las imágenes del artista ([57bd326](https://github.com/maurodviveros/course_MEAN-Musify/commit/57bd326598116345d7029891d48b7352e1119da7))
+
+
+
 #### 0.0.4 (2023-03-06)
 
 ##### Build System / Dependencies

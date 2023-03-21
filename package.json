@@ -2,7 +2,7 @@
   "name": "course_mean-musify",
   "description": "MEAN-Musify: Desarrollo web con JavaScript, Angular, NodeJS y MongoDB",
   "author": "Mauro Daniel Viveros <maurod.viveros@gmail.com> (TRY Ubbe)",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "private": true,
   "scripts": {
