@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 const Album   = require("./album");
 
@@ -30,4 +31,5 @@ SongSchema.pre('findByIdAndUpdate', async function(next) {
   }
 });
 
+SongSchema.plugin(mongoosePaginate);
 module.exports = mongoose.model("Song", SongSchema);

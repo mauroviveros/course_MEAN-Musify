@@ -5,12 +5,31 @@ const fs    = require("fs");
 
 const Song  = require("../models/song");
 
+const populate = {
+  path: "album",
+  populate: {
+    path: "artist"
+  }
+};
+
 async function getSong(req, res){
   try {
-    const songDB = await Song.findById(req.params._id).populate({ path: "album", populate: { path: "artist" } }).exec();
+    const songDB = await Song.findById(req.params._id).populate(populate).exec();
     return res.json(songDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el detalle de la canción", error: { message: error.message } });
+  };
+};
+
+async function getSongs(req, res){
+  const page  = req.query.page  || 1;
+  const limit = req.query.limit || 10;
+
+  try {
+    const songsDB = await Song.paginate({}, { page, limit, populate });
+    return res.json(songsDB);
+  } catch (error) {
+    return res.status(400).json({ message: "Error al obtener el listado de canciones", error: { message: error.message } });
   };
 };
 
@@ -28,5 +47,6 @@ async function uploadSong(req, res){
 
 module.exports = {
   getSong,
+  getSongs,
   uploadSong
 };

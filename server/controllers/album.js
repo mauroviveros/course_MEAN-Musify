@@ -6,9 +6,13 @@ const fs    = require("fs");
 const Album   = require("../models/album");
 const Song    = require("../models/song");
 
+const populate = {
+  path: "artist"
+};
+
 async function getAlbum(req, res){
   try {
-    const albumDB = await Album.findById(req.params._id).populate({ path: "artist" }).exec();
+    const albumDB = await Album.findById(req.params._id).populate(populate).exec();
     return res.json(albumDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el detalle del album", error: { message: error.message } });
@@ -20,7 +24,7 @@ async function getAlbums(req, res){
   const limit = req.query.limit || 10;
 
   try {
-    const albumsDB = await Album.paginate({}, { page, limit });
+    const albumsDB = await Album.paginate({}, { page, limit, populate });
     return res.json(albumsDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el listado de albumes", error: { message: error.message } });
