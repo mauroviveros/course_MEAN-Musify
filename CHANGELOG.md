@@ -1,3 +1,18 @@
+## [0.0.6](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.0.5...v0.0.6) (2023-03-28)
+
+
+### Features
+
+* **course:** :white_check_mark: 32. Controlador y conseguir un album ([03bf7f1](https://github.com/maurodviveros/course_MEAN-Musify/commit/03bf7f1c3b11b0943e22d9d5dd50adb010186148))
+* **course:** :white_check_mark: 33. Guardar un album ([88d3bcb](https://github.com/maurodviveros/course_MEAN-Musify/commit/88d3bcb3af1728ed8c2b45fbfcab34934262203d))
+* **course:** :white_check_mark: 34. Devolver un album ([8bc9b36](https://github.com/maurodviveros/course_MEAN-Musify/commit/8bc9b36863b4029503574a38a16efe8cc2303657))
+* **course:** :white_check_mark: 35. Mostrar albums ([c1cd144](https://github.com/maurodviveros/course_MEAN-Musify/commit/c1cd14493f3adff79c2cdd3641be69da7def13c5))
+* **course:** :white_check_mark: 36. Actualizar albums ([8a3fa18](https://github.com/maurodviveros/course_MEAN-Musify/commit/8a3fa18f236da0275596464713941ed036b6471e))
+* **course:** :white_check_mark: 37. Borrar albums ([104a991](https://github.com/maurodviveros/course_MEAN-Musify/commit/104a991473150653fab2b67714a63c2e4841ef03))
+* **course:** :white_check_mark: 38. Métodos para las imágenes de albums ([9515220](https://github.com/maurodviveros/course_MEAN-Musify/commit/95152209fa82e41db71caef015278a73795c3f17))
+
+
+
 ## [0.0.5](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.0.4...v0.0.5) (2023-03-21)
 
 
