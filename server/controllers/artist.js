@@ -27,8 +27,8 @@ async function getArtists(req, res){
     return res.json(artistsDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el listado de artistas", error: { message: error.message } });
-  }
-}
+  };
+};
 
 async function uploadArtist(req, res){
   const artist    = new Artist(req.body);
@@ -63,7 +63,7 @@ async function deleteArtist(req, res){
     return res.json({ status: 200, artist: artistDeleted });
   } catch (error) {
     return res.status(400).json({ message: "Error al borrar el artista", error: { message: error.message } });
-  }
+  };
 };
 
 
@@ -99,8 +99,8 @@ async function getImage(req, res){
     res.sendFile(path.resolve(path_file));
   } catch(error){
     return res.status(500).send({ message: "Error al obtener la imagen del usuario", error: { message: error.message } });
-  }
-}
+  };
+};
 
 module.exports = {
   getArtist,
