@@ -6,7 +6,7 @@ const mongoosePaginate = require("mongoose-paginate-v2");
 const ArtistSchema = mongoose.Schema({
   name: { type: String, required: [true, "Rellena todos los campos"]},
   description: { type: String, required: [true, "Rellena todos los campos"] },
-  image: String
+  image: { type: String }
 });
 
 ArtistSchema.plugin(mongoosePaginate);

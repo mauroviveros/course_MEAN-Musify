@@ -11,6 +11,19 @@ async function getAlbum(req, res){
   };
 };
 
+async function uploadAlbum(req, res){
+  const album   = new Album(req.body);
+  album.image   = undefined;
+
+  try {
+    const albumStored = await album.save();
+    return res.json(albumStored);
+  } catch (error) {
+    return res.status(400).json({ message: "Error al guardar el album", error: { message: error.message } });
+  };
+};
+
 module.exports = {
-  getAlbum
+  getAlbum,
+  uploadAlbum
 };
