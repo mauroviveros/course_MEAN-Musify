@@ -55,9 +55,19 @@ async function updateSong(req, res){
   };
 };
 
+async function deleteSong(req, res){
+  try {
+    const songDeleted = await Song.findByIdAndDelete(req.params._id);
+    return res.json({ status: 200, song: songDeleted });
+  } catch (error) {
+    return res.status(400).json({ message: "Error al borrar la canción", error: { message: error.message } });
+  };
+};
+
 module.exports = {
   getSong,
   getSongs,
   uploadSong,
-  updateSong
+  updateSong,
+  deleteSong
 };

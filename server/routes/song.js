@@ -15,4 +15,6 @@ API.post("/songs", auth_md.ensureAuth, SongCtrl.uploadSong);
 
 API.put("/songs/:_id", auth_md.ensureAuth, SongCtrl.updateSong);
 
+API.delete("/songs/:_id", auth_md.ensureAuth, SongCtrl.deleteSong);
+
 module.exports = API;
