@@ -1,3 +1,12 @@
+# [0.1.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.0.7...v0.1.0) (2023-03-28)
+
+
+### Features
+
+* **course:** :white_check_mark: 46. Configurar cabeceras (CORS) ([a359e78](https://github.com/maurodviveros/course_MEAN-Musify/commit/a359e781740f26a6687cfef3c1e878f3d403ca30))
+
+
+
 ## [0.0.7](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.0.6...v0.0.7) (2023-03-28)
 
 
