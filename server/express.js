@@ -4,8 +4,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const APP = express();
 
-const user_routes = require("./routes/user");
+const user_routes   = require("./routes/user");
 const artist_routes = require("./routes/artist");
+const album_routes  = require("./routes/album");
 
 APP.use(bodyParser.urlencoded({ extended: false }))
 APP.use(bodyParser.json())
@@ -22,6 +23,7 @@ APP.use(bodyParser.json())
 // Cargas de Rutas Base
 APP.use("/api", user_routes);
 APP.use("/api", artist_routes);
+APP.use("/api", album_routes);
 
 APP.get("/pruebas", function(req, res){
     res.status(200).send({ message: "Bienvenido a Musify" });
