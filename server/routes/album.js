@@ -1,9 +1,11 @@
 "use strict";
 
 const express = require("express");
+const multipart = require("connect-multiparty");
 
 const AlbumCtrl = require("../controllers/album");
 const auth_md = require("../middlewares/authenticated");
+const upload_md = multipart({ uploadDir: "./uploads/albums" });
 
 
 const API = express.Router();
@@ -17,5 +19,7 @@ API.put("/albums/:_id", auth_md.ensureAuth, AlbumCtrl.updateAlbum);
 
 API.delete("/albums/:_id", auth_md.ensureAuth, AlbumCtrl.deleteAlbum);
 
+API.get("/albums/:_id/image", AlbumCtrl.getImage);
+API.post("/albums/:_id/image", [auth_md.ensureAuth, upload_md], AlbumCtrl.uploadImage);
 
 module.exports = API;

@@ -1,6 +1,5 @@
 "use strict";
 
-const mongoosePaginate = require("mongoose-paginate-v2");
 const path  = require("path");
 const fs    = require("fs");
 
@@ -76,8 +75,6 @@ async function uploadImage(req, res){
       file_ext  = path.extname(file_name);
     } else throw new Error("No has subido ninguna imagen...");
 
-  
-
     if(file_ext === ".png" || file_ext === ".jpg" || file_ext === ".gif"){
       const artistUpdated = await Artist.findByIdAndUpdate(req.params._id, { image: file_name }, { new: true });
       return res.send(artistUpdated);
@@ -90,7 +87,7 @@ async function uploadImage(req, res){
 async function getImage(req, res){
   try{
     const artistDB = await Artist.findById(req.params._id);
-    if(!artistDB) throw new Error("No existe el usuario");
+    if(!artistDB) throw new Error("No existe el artista");
     const path_file = `./uploads/artists/${artistDB.image}`;
     const imageBool = await fs.existsSync(path_file);
 
@@ -98,7 +95,7 @@ async function getImage(req, res){
 
     res.sendFile(path.resolve(path_file));
   } catch(error){
-    return res.status(500).send({ message: "Error al obtener la imagen del usuario", error: { message: error.message } });
+    return res.status(500).send({ message: "Error al obtener la imagen del artista", error: { message: error.message } });
   };
 };
 

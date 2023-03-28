@@ -1,5 +1,8 @@
 "use strict";
 
+const path  = require("path");
+const fs    = require("fs");
+
 const Album   = require("../models/album");
 const Song    = require("../models/song");
 
@@ -59,10 +62,45 @@ async function deleteAlbum(req, res){
   };
 };
 
+async function uploadImage(req, res){
+  let file_name, file_ext;
+
+  try {
+    if(req.files){
+      file_name = path.basename(req.files.image.path);
+      file_ext  = path.extname(file_name);
+    } else throw new Error("No has subido ninguna imagen...");
+
+    if(file_ext === ".png" || file_ext === ".jpg" || file_ext === ".gif"){
+      const albumUpdated = await Album.findByIdAndUpdate(req.params._id, { image: file_name }, { new: true });
+      return res.send(albumUpdated);
+    } else throw new Error("Extension del archivo no valida");
+  } catch(error){
+    return res.status(400).json({ message: "Error al actualizar la imagen del album", error: { message: error.message } });
+  };
+};
+
+async function getImage(req, res){
+  try{
+    const albumDB = await Album.findById(req.params._id);
+    if(!albumDB) throw new Error("No existe el album");
+    const path_file = `./uploads/albums/${albumDB.image}`;
+    const imageBool = await fs.existsSync(path_file);
+
+    if(!imageBool) throw new Error("No existe la imagen");
+
+    res.sendFile(path.resolve(path_file));
+  } catch(error){
+    return res.status(500).send({ message: "Error al obtener la imagen del album", error: { message: error.message } });
+  };
+};
+
 module.exports = {
   getAlbum,
   getAlbums,
   uploadAlbum,
   updateAlbum,
-  deleteAlbum
+  deleteAlbum,
+  uploadImage,
+  getImage
 };
