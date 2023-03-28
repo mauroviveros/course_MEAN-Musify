@@ -64,10 +64,45 @@ async function deleteSong(req, res){
   };
 };
 
+async function uploadFile(req, res){
+  let file_name, file_ext;
+
+  try {
+    if(req.files){
+      file_name = path.basename(req.files.file.path);
+      file_ext  = path.extname(file_name);
+    } else throw new Error("No has subido ningun archivo...");
+
+    if(file_ext === ".mp3" || file_ext === ".ogg"){
+      const songUpdated = await Song.findByIdAndUpdate(req.params._id, { file: file_name }, { new: true });
+      return res.send(songUpdated);
+    } else throw new Error("Extension del archivo no valido");
+  } catch(error){
+    return res.status(400).json({ message: "Error al actualizar el archivo de la canción", error: { message: error.message } });
+  };
+};
+
+async function getFile(req, res){
+  try{
+    const songDB = await Song.findById(req.params._id);
+    if(!songDB) throw new Error("No existe la canción");
+    const path_file = `./uploads/songs/${songDB.file}`;
+    const fileBool = await fs.existsSync(path_file);
+
+    if(!fileBool) throw new Error("No existe el archivo");
+
+    res.sendFile(path.resolve(path_file));
+  } catch(error){
+    return res.status(500).send({ message: "Error al obtener el archivo de la canción", error: { message: error.message } });
+  };
+};
+
 module.exports = {
   getSong,
   getSongs,
   uploadSong,
   updateSong,
-  deleteSong
+  deleteSong,
+  uploadFile,
+  getFile
 };
