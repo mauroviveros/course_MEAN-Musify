@@ -1,3 +1,18 @@
+## [0.0.7](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.0.6...v0.0.7) (2023-03-28)
+
+
+### Features
+
+* **course:** :white_check_mark: 39. Controlador de canciones y rutas ([2f7eb49](https://github.com/maurodviveros/course_MEAN-Musify/commit/2f7eb497306d6679e17a81e74c0782fb2c9ec12d))
+* **course:** :white_check_mark: 40. Acción para crear canciones dentro de un album ([e83eb99](https://github.com/maurodviveros/course_MEAN-Musify/commit/e83eb995e2a6a0d3155fa8045d9c55f4850edcca))
+* **course:** :white_check_mark: 41. Conseguir una canción ([b8be888](https://github.com/maurodviveros/course_MEAN-Musify/commit/b8be888ecc20d3fa6b0854f4c914642bbbb9a91b))
+* **course:** :white_check_mark: 42. Listar canciones ([ed8e81a](https://github.com/maurodviveros/course_MEAN-Musify/commit/ed8e81aadfef43182f9e39793c53b9c4b4b38d8e))
+* **course:** :white_check_mark: 43. Actualizar canciones ([abe2c7a](https://github.com/maurodviveros/course_MEAN-Musify/commit/abe2c7a0919b5d8457513a2aaf07afb53658a78c))
+* **course:** :white_check_mark: 44. Eliminar una canción ([f9557d8](https://github.com/maurodviveros/course_MEAN-Musify/commit/f9557d87b8dbccc02750790e1f76815e0ed01db6))
+* **course:** :white_check_mark: 45. Subir ficheros de audio ([344d035](https://github.com/maurodviveros/course_MEAN-Musify/commit/344d0356aaecab9cace18b5923943f0c7e753a30))
+
+
+
 ## [0.0.6](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.0.5...v0.0.6) (2023-03-28)
 
 
