@@ -15,4 +15,7 @@ API.post("/albums", auth_md.ensureAuth, AlbumCtrl.uploadAlbum);
 
 API.put("/albums/:_id", auth_md.ensureAuth, AlbumCtrl.updateAlbum);
 
+API.delete("/albums/:_id", auth_md.ensureAuth, AlbumCtrl.deleteAlbum);
+
+
 module.exports = API;

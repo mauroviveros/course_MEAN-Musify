@@ -1,6 +1,7 @@
 "use strict";
 
 const Album   = require("../models/album");
+const Song    = require("../models/song");
 
 async function getAlbum(req, res){
   try {
@@ -45,9 +46,23 @@ async function updateAlbum(req, res){
   };
 };
 
+async function deleteAlbum(req, res){
+  try {
+    const albumDeleted = await Album.findByIdAndDelete(req.params._id);
+    if(!albumDeleted) throw new Error("No existe el album que desea eliminar");
+
+    await Song.findOneAndDelete({ album: albumDeleted._id });
+
+    return res.json({ status: 200, album: albumDeleted });
+  } catch (error) {
+    return res.status(400).json({ message: "Error al borrar el album", error: { message: error.message } });
+  };
+};
+
 module.exports = {
   getAlbum,
   getAlbums,
   uploadAlbum,
-  updateAlbum
+  updateAlbum,
+  deleteAlbum
 };
