@@ -11,6 +11,18 @@ async function getAlbum(req, res){
   };
 };
 
+async function getAlbums(req, res){
+  const page  = req.query.page  || 1;
+  const limit = req.query.limit || 10;
+
+  try {
+    const albumsDB = await Album.paginate({}, { page, limit });
+    return res.json(albumsDB);
+  } catch (error) {
+    return res.status(400).json({ message: "Error al obtener el listado de albumes", error: { message: error.message } });
+  };
+};
+
 async function uploadAlbum(req, res){
   const album   = new Album(req.body);
   album.image   = undefined;
@@ -25,5 +37,6 @@ async function uploadAlbum(req, res){
 
 module.exports = {
   getAlbum,
+  getAlbums,
   uploadAlbum
 };

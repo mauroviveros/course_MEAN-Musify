@@ -8,6 +8,7 @@ const auth_md = require("../middlewares/authenticated");
 
 const API = express.Router();
 
+API.get("/albums", auth_md.ensureAuth, AlbumCtrl.getAlbums);
 API.get("/albums/:_id", auth_md.ensureAuth, AlbumCtrl.getAlbum);
 
 API.post("/albums", auth_md.ensureAuth, AlbumCtrl.uploadAlbum);
