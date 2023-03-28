@@ -13,4 +13,6 @@ API.get("/songs/:_id", auth_md.ensureAuth, SongCtrl.getSong);
 
 API.post("/songs", auth_md.ensureAuth, SongCtrl.uploadSong);
 
+API.put("/songs/:_id", auth_md.ensureAuth, SongCtrl.updateSong);
+
 module.exports = API;

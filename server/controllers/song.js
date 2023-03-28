@@ -45,8 +45,19 @@ async function uploadSong(req, res){
   };
 };
 
+async function updateSong(req, res){
+  try {
+    delete req.body.image;
+    const songUpdated = await Song.findByIdAndUpdate(req.params._id, req.body, { new: true });
+    return res.json(songUpdated);
+  } catch (error) {
+    return res.status(400).json({ message: "Error al actualizar la canción", error: { message: error.message } });
+  };
+};
+
 module.exports = {
   getSong,
   getSongs,
-  uploadSong
+  uploadSong,
+  updateSong
 };
