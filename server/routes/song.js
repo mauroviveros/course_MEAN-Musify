@@ -10,4 +10,6 @@ const API = express.Router();
 
 API.get("/songs", auth_md.ensureAuth, SongCtrl.getSong);
 
+API.post("/songs", auth_md.ensureAuth, SongCtrl.uploadSong);
+
 module.exports = API;

@@ -9,6 +9,19 @@ async function getSong(req, res){
   res.send({ message: "Controllador de canción" });
 };
 
+async function uploadSong(req, res){
+  const song   = new Song(req.body);
+  song.file   = undefined;
+
+  try {
+    const songStored = await song.save();
+    return res.json(songStored);
+  } catch (error) {
+    return res.status(400).json({ message: "Error al guardar la canción", error: { message: error.message } });
+  };
+};
+
 module.exports = {
   getSong,
+  uploadSong
 };
