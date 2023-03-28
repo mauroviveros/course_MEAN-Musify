@@ -35,8 +35,19 @@ async function uploadAlbum(req, res){
   };
 };
 
+async function updateAlbum(req, res){
+  try {
+    delete req.body.image;
+    const albumUpdated = await Album.findByIdAndUpdate(req.params._id, req.body, { new: true });
+    return res.json(albumUpdated);
+  } catch (error) {
+    return res.status(400).json({ message: "Error al actualizar el album", error: { message: error.message } });
+  };
+};
+
 module.exports = {
   getAlbum,
   getAlbums,
-  uploadAlbum
+  uploadAlbum,
+  updateAlbum
 };
