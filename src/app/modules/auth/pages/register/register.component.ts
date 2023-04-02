@@ -1,5 +1,10 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+
+import Swal from "sweetalert2";
+
+import { AuthService } from "../../auth.service";
 
 @Component({
   selector: "app-register",
@@ -15,7 +20,9 @@ export class RegisterComponent {
   });
 
   constructor(
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private _router: Router,
+    private _auth: AuthService
   ){};
 
   public validate(controlName: string){
@@ -28,7 +35,10 @@ export class RegisterComponent {
   public submit(){
     if(this.form.invalid) return Object.values(this.form.controls).forEach(control => control.markAsDirty());
 
-
-    console.log(this.form.value);
-  }
+    const body = this.form.value;
+    this._auth.register(body).subscribe(response => {
+      if(typeof response !== "boolean") return Swal.fire("Error", response, "error");
+      return this._router.navigate([""]);
+    });
+  };
 };

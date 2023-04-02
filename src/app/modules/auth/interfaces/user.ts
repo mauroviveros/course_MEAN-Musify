@@ -14,3 +14,10 @@ export interface AuthResponse{
   user    : User;
   token?  : string;
 }
+
+export interface AuthReqest{
+  name      : string;
+  surname   : string;
+  email     : string;
+  password  : string;
+}

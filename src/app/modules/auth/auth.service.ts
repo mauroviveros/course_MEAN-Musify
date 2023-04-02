@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http
 import { catchError, map, tap } from "rxjs/operators";
 
 import { environment } from '../../../environments/environment';
-import { AuthResponse, User } from './interfaces/user';
+import { AuthReqest, AuthResponse, User } from './interfaces/user';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -55,9 +55,17 @@ export class AuthService {
     );
   };
 
+  register(body:AuthReqest){
+    return this._http.post<AuthResponse>(`${this.ENDPOINT}/register`, body).pipe(
+      tap(resp => this._tapResponse(resp)),
+      map(_ => true),
+      catchError(this._catchError)
+    );
+  };
+
   logout(){
     localStorage.removeItem("token");
     this.USER = {} as User;
     this._router.navigate(["login"]);
-  }
+  };
 };
