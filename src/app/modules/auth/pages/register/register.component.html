@@ -5,7 +5,7 @@
     <label for="name">Nombre:</label>
     <div class="input-group">
       <div class="input-group-text"><i class="material-icons">face</i></div>
-      <input type="text" class="form-control" [ngClass]="validate('name')" id="name" name="name" formControlName="name">
+      <input type="text" class="form-control" [ngClass]="validate('name')" id="name" name="name" formControlName="name" placeholder="Ingrese su Nombre">
 
     </div>
   </div>
@@ -14,7 +14,7 @@
     <label for="surname">Apellido:</label>
     <div class="input-group">
       <div class="input-group-text"><i class="material-icons">badge</i></div>
-      <input type="text" class="form-control" [ngClass]="validate('surname')" id="surname" name="surname" formControlName="surname">
+      <input type="text" class="form-control" [ngClass]="validate('surname')" id="surname" name="surname" formControlName="surname" placeholder="Ingrese su Apellido">
       <div class="invalid-feedback">El campo es obligatorio</div>
     </div>
   </div>
@@ -23,7 +23,7 @@
     <label for="email" class="form-label">Correo Electrónico:</label>
     <div class="input-group">
       <div class="input-group-text"><i class="material-icons">email</i></div>
-      <input type="text" class="form-control" [ngClass]="validate('email')" id="email" name="email" formControlName="email">
+      <input type="text" class="form-control" [ngClass]="validate('email')" id="email" name="email" formControlName="email" placeholder="Ingrese su Correo">
       <div class="invalid-feedback">El campo es obligatorio</div>
     </div>
     <!-- <div class="invalid-feedback"></div> -->
@@ -32,7 +32,7 @@
     <label for="password" class="form-label">Contraseña:</label>
     <div class="input-group">
       <span class="input-group-text"><i class="material-icons">lock</i></span>
-      <input type="password" class="form-control" [ngClass]="validate('password')" id="password" name="password" formControlName="password">
+      <input type="password" class="form-control" [ngClass]="validate('password')" id="password" name="password" formControlName="password" placeholder="Ingrese su contraseña">
       <div class="invalid-feedback">El campo es obligatorio</div>
     </div>
     <!-- <div class="invalid-feedback"></div> -->

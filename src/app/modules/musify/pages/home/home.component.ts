@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/modules/auth/auth.service';
+import { User } from 'src/app/modules/auth/interfaces/user';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,12 @@ import { AuthService } from 'src/app/modules/auth/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  public user: User = this._auth.user;
   constructor(
     private _auth: AuthService
   ){}
 
-  test(){
-    console.log(this._auth.user);
+  logout(){
+    this._auth.logout();
   }
 }

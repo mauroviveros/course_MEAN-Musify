@@ -5,6 +5,7 @@ import { catchError, map, tap } from "rxjs/operators";
 import { environment } from '../../../environments/environment';
 import { AuthResponse, User } from './interfaces/user';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -19,7 +20,8 @@ export class AuthService {
   }
 
   constructor(
-    private _http: HttpClient
+    private _http: HttpClient,
+    private _router: Router
   ){};
 
   private _tapResponse(resp: AuthResponse){
@@ -52,4 +54,10 @@ export class AuthService {
       catchError(this._catchError)
     );
   };
+
+  logout(){
+    localStorage.removeItem("token");
+    this.USER = {} as User;
+    this._router.navigate(["login"]);
+  }
 };
