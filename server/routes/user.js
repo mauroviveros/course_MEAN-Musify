@@ -12,6 +12,7 @@ const API = express.Router();
 
 API.post("/register", UserCtrl.saveUser);
 API.post("/login", UserCtrl.loginUser);
+API.get("/user", auth_md.ensureAuth, UserCtrl.getUser);
 
 
 API.put("/user/:_id", auth_md.ensureAuth, UserCtrl.updateUser);

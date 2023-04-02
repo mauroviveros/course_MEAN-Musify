@@ -6,6 +6,18 @@ const User    = require("./../models/user");
 const path    = require("path");
 const fs      = require("fs");
 
+
+async function getUser(req, res){
+  try{
+    const user = await User.findById(req.user._id);
+    const token = await JWT.createToken(user);
+
+    return res.json({ user, token });
+  } catch(error){
+    return res.status(400).send({ message: "Error al obtener el usuario", error: { message: error.message } });
+  };
+}
+
 async function saveUser (req, res){
   const user = new User();
   const params = req.body;
@@ -46,8 +58,10 @@ async function loginUser(req, res){
     const check = await bcrypt.compare(password, userDB.password);
     if(!check) throw new Error("Contraseña incorrecta");
 
-    if(params.hash) res.status(200).send({ token: JWT.createToken(userDB) });
-    else res.status(200).send(userDB);
+    const response = { user: userDB };
+
+    if(params.hash) response.token = JWT.createToken(userDB);
+    return res.status(200).send(response);
   } catch(error){
     return res.status(400).send({ message: "Error al obtener el usuario", error: { message: error.message } });
   };
@@ -104,9 +118,10 @@ async function getImage(req, res){
 }
 
 module.exports = {
-    saveUser,
-    loginUser,
-    updateUser,
-    uploadImage,
-    getImage
+  getUser,
+  saveUser,
+  loginUser,
+  updateUser,
+  uploadImage,
+  getImage
 };

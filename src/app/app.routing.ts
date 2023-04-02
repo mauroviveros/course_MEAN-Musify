@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidarTokenGuard } from './modules/auth/guards/validar-token.guard';
 
 const routes: Routes = [
-  { path: "", loadChildren: ()=> import("./modules/musify/musify.module").then(m => m.MusifyModule) },
+  {
+    path: "",
+    loadChildren: ()=> import("./modules/musify/musify.module").then(m => m.MusifyModule),
+    canActivate: [ValidarTokenGuard],
+    // canLoad: [ValidarTokenGuard]
+  },
   { path: "", loadChildren: ()=> import("./modules/auth/auth.module").then(m => m.AuthModule) }
 ];
 

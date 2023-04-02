@@ -1,6 +1,7 @@
 "use strict";
 
 const express = require("express");
+const cors    = require("cors");
 const bodyParser = require("body-parser");
 const APP = express();
 
@@ -13,13 +14,7 @@ APP.use(bodyParser.urlencoded({ extended: false }))
 APP.use(bodyParser.json())
 
 // Configurar Cabeceras HTTP
-APP.use(function (req, res, next){
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With,content-type");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
-    res.setHeader("Access-Control-Allow-Credentials", true);
-    next();
-});
+APP.use(cors());
 
 // Cargas de Rutas Base
 APP.use("/api", user_routes);

@@ -1,4 +1,4 @@
-export interface AuthResponse {
+export interface User {
   _id       : string;
   __v       : number;
   name      : string;
@@ -7,5 +7,10 @@ export interface AuthResponse {
   role      : string;
   password  : string;
   image     : string;
-  token?    : string;
+}
+
+
+export interface AuthResponse{
+  user    : User;
+  token?  : string;
 }

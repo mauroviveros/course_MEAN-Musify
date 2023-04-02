@@ -38,9 +38,7 @@ export class LoginComponent {
     const { email, password } = this.form.value;
     this._auth.login(email, password, this.rememberControl.value).subscribe(response => {
       if(typeof response !== "boolean") return Swal.fire("Error", response, "error");
-      this._router.navigate([""]);
-
-      return
+      return this._router.navigate([""]);
     });
   };
 
