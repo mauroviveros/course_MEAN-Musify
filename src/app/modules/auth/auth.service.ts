@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { catchError, map } from "rxjs/operators";
+
 import { environment } from '../../../environments/environment';
+import { AuthResponse } from './interfaces/user';
+import { of } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +17,17 @@ export class AuthService {
     private _http: HttpClient
   ){};
 
-  login(email: string, password: string){
-    const body = { email, password };
-    return this._http.post(`${this.ENDPOINT}/login`, body);
-  }
+  private _catchError(err: HttpErrorResponse){
+    let message: string = "Ah ocurrido un error";
+    if(err.error.error) message = err.error.error.message;
+    return of(message);
+  };
+
+  login(email: string, password: string, hash?: boolean){
+    const body = { email, password, hash };
+    return this._http.post<AuthResponse>(`${this.ENDPOINT}/login`, body).pipe(
+      map(_ => true),
+      catchError(this._catchError)
+    );
+  };
 };
