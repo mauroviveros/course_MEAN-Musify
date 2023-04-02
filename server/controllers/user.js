@@ -49,7 +49,7 @@ async function loginUser(req, res){
     if(params.hash) res.status(200).send({ token: JWT.createToken(userDB) });
     else res.status(200).send({ user: userDB });
   } catch(error){
-    return res.status(500).send({ message: "Error al obtener el usuario", error: { message: error.message } });
+    return res.status(400).send({ message: "Error al obtener el usuario", error: { message: error.message } });
   };
 
 };
@@ -61,7 +61,7 @@ async function updateUser(req, res){
     const userUPD = await User.findByIdAndUpdate(userID, req.body, { new: true });
     return res.status(200).send({ user: userUPD });
   } catch(error){
-    return res.status(500).send({ message: "Error al actualizar el usuario", error: { message: error.message } });
+    return res.status(400).send({ message: "Error al actualizar el usuario", error: { message: error.message } });
   }
 };
 
@@ -75,14 +75,14 @@ async function uploadImage(req, res){
       file_ext  = path.extname(file_name);
     } else throw new Error("No has subido ninguna imagen...");
 
-  
+
 
     if(file_ext === ".png" || file_ext === ".jpg" || file_ext === ".gif"){
       const userUPD = await User.findByIdAndUpdate(userID, { image: file_name }, { new: true });
       return res.status(200).send({ user: userUPD });
     } else throw new Error("Extension del archivo no valida");
   } catch(error){
-    return res.status(500).send({ message: "Error al actualizar la imagen del usuario", error: { message: error.message } });
+    return res.status(400).send({ message: "Error al actualizar la imagen del usuario", error: { message: error.message } });
   };
 };
 
@@ -99,7 +99,7 @@ async function getImage(req, res){
 
     res.sendFile(path.resolve(path_file));
   } catch(error){
-    return res.status(500).send({ message: "Error al obtener la imagen del usuario", error: { message: error.message } });
+    return res.status(400).send({ message: "Error al obtener la imagen del usuario", error: { message: error.message } });
   }
 }
 
