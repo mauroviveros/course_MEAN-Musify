@@ -1,0 +1,10 @@
+<nav>
+  <ul>
+    <li *ngFor="let link of links">
+      <a class="btn btn-link">
+        <i class="material-icons">{{ link.icon }}</i>
+        <span>{{ link.text }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>
