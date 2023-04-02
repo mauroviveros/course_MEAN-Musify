@@ -47,7 +47,7 @@ async function loginUser(req, res){
     if(!check) throw new Error("Contraseña incorrecta");
 
     if(params.hash) res.status(200).send({ token: JWT.createToken(userDB) });
-    else res.status(200).send({ user: userDB });
+    else res.status(200).send(userDB);
   } catch(error){
     return res.status(400).send({ message: "Error al obtener el usuario", error: { message: error.message } });
   };

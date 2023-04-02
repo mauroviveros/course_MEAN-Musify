@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import Swal from "sweetalert2";
+import { AuthService } from "../../auth.service";
 
 @Component({
   selector: "app-login",
@@ -16,7 +19,9 @@ export class LoginComponent {
 
 
   constructor(
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private _router: Router,
+    private _auth: AuthService
   ){}
 
 
@@ -30,8 +35,13 @@ export class LoginComponent {
   public submit(){
     if(this.form.invalid) return Object.values(this.form.controls).forEach(control => control.markAsDirty());
 
-    console.log(this.form.value);
-    console.log(this.rememberControl.value);
-  }
+    const { email, password } = this.form.value;
+    this._auth.login(email, password, this.rememberControl.value).subscribe(response => {
+      if(typeof response !== "boolean") return Swal.fire("Error", response, "error");
+      this._router.navigate([""]);
+
+      return
+    });
+  };
 
 };
