@@ -46,6 +46,15 @@ export class AuthService {
     );
   };
 
+  updateUser(body:AuthReqest){
+    const headers = new HttpHeaders().set("Authorization", localStorage.getItem("token") || "");
+    return this._http.put<AuthResponse>(`${this.ENDPOINT}/user`, body, { headers }).pipe(
+      tap(resp => this._tapResponse(resp)),
+      map(_ => true),
+      catchError(this._catchError)
+    )
+  };
+
   login(email: string, password: string, hash?: boolean){
     const body = { email, password, hash };
     return this._http.post<AuthResponse>(`${this.ENDPOINT}/login`, body).pipe(

@@ -54,7 +54,7 @@ async function loginUser(req, res){
 };
 
 async function updateUser(req, res){
-  const userID  = req.params._id;
+  const userID  = req.user._id;
 
   try{
     const userUPD = await User.findByIdAndUpdate(userID, req.body, { new: true });
@@ -65,7 +65,7 @@ async function updateUser(req, res){
 };
 
 async function uploadImage(req, res){
-  const userID    = req.params._id;
+  const userID    = req.user._id;
   let file_name, file_ext;
 
   try {
@@ -86,7 +86,7 @@ async function uploadImage(req, res){
 };
 
 async function getImage(req, res){
-  const userID = req.params._id;
+  const userID = req.user._id;
 
   try{
     const userDB = await User.findById(userID);
