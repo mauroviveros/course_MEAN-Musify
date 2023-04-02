@@ -1,1 +1,48 @@
-<p>register works!</p>
+<h1 class="card-header text-center">Register</h1>
+<form class="card-body needs-validation p-5" novalidate>
+
+  <div class="mb-3">
+    <label for="name">Nombre:</label>
+    <div class="input-group">
+      <div class="input-group-text"><i class="material-icons">face</i></div>
+      <input type="text" class="form-control" id="name" name="name" formControlName="name" required>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="surname">Apellido:</label>
+    <div class="input-group">
+      <div class="input-group-text"><i class="material-icons">badge</i></div>
+      <input type="text" class="form-control" id="surname" name="surname" formControlName="surname" required>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo Electrónico:</label>
+    <div class="input-group">
+      <div class="input-group-text"><i class="material-icons">email</i></div>
+      <input type="text" class="form-control" id="email" name="email" formControlName="email" required>
+    </div>
+    <!-- <div class="invalid-feedback"></div> -->
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Contraseña:</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="material-icons">lock</i></span>
+      <input type="password" class="form-control" id="password" name="password" formControlName="password" required>
+    </div>
+    <!-- <div class="invalid-feedback"></div> -->
+  </div>
+
+  <p class="form-text">
+    Al registrarte estás de acuerdo con nuestros términos y condiciones.
+  </p>
+
+  <div class="d-flex align-items-center">
+    <button type="submit" class="btn btn-primary ms-auto">Register</button>
+  </div>
+</form>
+
+<div class="card-footer py-3">
+  <p class="text-center m-0">Ya tienes cuenta? <a routerLink="/login" class="text-dark">Inicia sesión</a></p>
+</div>
