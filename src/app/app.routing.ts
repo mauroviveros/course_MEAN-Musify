@@ -11,7 +11,10 @@ const routes: Routes = [
     canLoad: [ValidarTokenGuard],
     component: MusifyComponent
   },
-  { path: "", loadChildren: ()=> import("./modules/auth/auth.module").then(m => m.AuthModule) }
+  {
+    path: "",
+    loadChildren: ()=> import("./modules/auth/auth.module").then(m => m.AuthModule)
+  }
 ];
 
 @NgModule({

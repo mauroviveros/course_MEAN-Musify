@@ -6,13 +6,15 @@ import { AuthRoutingModule } from './auth.routing';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { FormComponent } from './components/form/form.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    FormComponent
+    FormComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
