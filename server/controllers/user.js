@@ -19,30 +19,15 @@ async function getUser(req, res){
 }
 
 async function saveUser (req, res){
-  const user = new User();
-  const params = req.body;
+  try{
+    const user = new User(req.body);
+    user.password = await bcrypt.hash(user.password, 10);
+    user.image = undefined;
 
-  user.name = params.name;
-  user.surname = params.surname;
-  user.email = !!params.email ? params.email.toLowerCase() : undefined;
-  user.role = "ROLE_USER";
-
-  if(!user.name || !user.surname || !user.email){
-    res.status(400).send({ message: "Rellena todos los campos" });
-  };
-
-  if(params.password){
-    try {
-      user.password = await bcrypt.hash(params.password, 10);
-      const userStored = await user.save();
-
-      if(!userStored) res.status(400).send({ message: "No se ha registrado el usuario" });
-      else res.status(200).send({ user: userStored });
-    } catch(error){
-      res.status(500).send({ message: "Error al guardar el usuario", error });
-    };
-  } else{
-    return res.status(400).send({ message: "Introduce una contraseña" });
+    await user.save();
+    return res.json({ user });
+  } catch(error){
+    res.status(500).send({ message: "Error al guardar el usuario", error: { message: error.message } });
   };
 };
 
