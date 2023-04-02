@@ -1,3 +1,20 @@
+# [0.2.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.1.1...v0.2.0) (2023-04-02)
+
+
+### Features
+
+* **course:** :white_check_mark: 54. Crear formularios de login y registro ([fe3c4df](https://github.com/maurodviveros/course_MEAN-Musify/commit/fe3c4df9378151dd41341ce723d3b1d736de786c))
+* **course:** :white_check_mark: 55. Two-way data binding en formularios ([5333ebf](https://github.com/maurodviveros/course_MEAN-Musify/commit/5333ebfac285f4bfa15b48240ee9b711f6a01678))
+* **course:** :white_check_mark: 56. Crear servicios ([651b55c](https://github.com/maurodviveros/course_MEAN-Musify/commit/651b55caaa2d462300750cd556c5b569bae97c99))
+* **course:** :white_check_mark: 59. Método login en el servicio de usuarios ([8ed8a00](https://github.com/maurodviveros/course_MEAN-Musify/commit/8ed8a00f58aec98d5c6726606b0bc5742ae13d20))
+* **course:** :white_check_mark: 60. Llamadas al servicio para identificar al usuario ([a49512f](https://github.com/maurodviveros/course_MEAN-Musify/commit/a49512f2aaebf86530bf5a906e55f074db790b18))
+* **course:** :white_check_mark: 61. Persistir el login con localStorage ([e954e28](https://github.com/maurodviveros/course_MEAN-Musify/commit/e954e28498bf9a22c34483de395fb7795feb0624))
+* **course:** :white_check_mark: 62. Cerrar sesión en el cliente ([e4e118e](https://github.com/maurodviveros/course_MEAN-Musify/commit/e4e118e59e6ca1d5245535de6536a863fc816d44))
+* **course:** :white_check_mark: 63. Formulario y recepción de datos para el registro ([dec1b99](https://github.com/maurodviveros/course_MEAN-Musify/commit/dec1b999b03ed532f6b4975072831ca09c581685))
+* **course:** :white_check_mark: 64. Métodos en el servicio y registrar usuarios ([34d3276](https://github.com/maurodviveros/course_MEAN-Musify/commit/34d327677c774c6686a578f3197d568cb0daecb3))
+
+
+
 ## [0.1.1](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.1.0...v0.1.1) (2023-04-02)
 
 
