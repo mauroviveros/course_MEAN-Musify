@@ -1,3 +1,15 @@
+## [0.1.1](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.1.0...v0.1.1) (2023-04-02)
+
+
+### Features
+
+* **course:** :white_check_mark: 49. Angular CLI ([05fcb45](https://github.com/maurodviveros/course_MEAN-Musify/commit/05fcb4518070501af858152397c3c29865cb0989))
+* **course:** :white_check_mark: 51. Incluir assets, Bootstrap y jQuery ([342609f](https://github.com/maurodviveros/course_MEAN-Musify/commit/342609f168fbcb57ce831920a04a049db8dbe500))
+* **course:** :white_check_mark: 52. Crear modelos de datos ([665aee9](https://github.com/maurodviveros/course_MEAN-Musify/commit/665aee9af6e6b03a5fe68171705d55bb27390b33))
+* **course:** :white_check_mark: 53. Componente principal y vistas ([2578e9d](https://github.com/maurodviveros/course_MEAN-Musify/commit/2578e9d1fb357deedaf493cc4308b7a5edb7fbcb))
+
+
+
 # [0.1.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.0.7...v0.1.0) (2023-03-28)
 
 
