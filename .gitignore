@@ -4,6 +4,7 @@ package-lock.json
 
 uploads/**/*.*
 !uploads/**/.gitkeep
+!uploads/**/empty.png
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 

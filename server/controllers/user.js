@@ -86,15 +86,16 @@ async function uploadImage(req, res){
 };
 
 async function getImage(req, res){
-  const userID = req.user._id;
+  const userID = req.params._id;
 
   try{
+    console.log(req.user);
     const userDB = await User.findById(userID);
     if(!userDB) throw new Error("No existe el usuario");
-    const path_file = `./uploads/users/${userDB.image}`;
+    let path_file = `./uploads/users/${userDB.image}`;
     const imageBool = await fs.existsSync(path_file);
 
-    if(!imageBool) throw new Error("No existe la imagen");
+    if(!imageBool) path_file = "./uploads/users/empty.png";
 
     res.sendFile(path.resolve(path_file));
   } catch(error){

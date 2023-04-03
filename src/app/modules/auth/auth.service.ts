@@ -46,6 +46,10 @@ export class AuthService {
     );
   };
 
+  imgProfileURL(){
+    return `${this.ENDPOINT}/user/${this.user._id}/image`;
+  }
+
   updateUser(body:AuthReqest){
     const headers = new HttpHeaders().set("Authorization", localStorage.getItem("token") || "");
     return this._http.put<AuthResponse>(`${this.ENDPOINT}/user`, body, { headers }).pipe(

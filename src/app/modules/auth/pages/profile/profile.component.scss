@@ -1,0 +1,32 @@
+.hover-overlay{
+  position: relative;
+  cursor: pointer;
+
+
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: all .25s ease;
+    i.material-icons{
+      font-size: 4rem;
+      color: lightgray;
+    }
+  }
+
+  &:hover .overlay{
+    opacity: 1;
+  }
+}
+
+input[type="file"]{
+  display: none;
+}
