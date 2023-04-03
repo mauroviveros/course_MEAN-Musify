@@ -7,6 +7,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 import { MusifyComponent } from '../../pages/musify/musify.component';
+import { ValidarTokenGuard } from './guards/validar-token.guard';
 
 const routes: Routes = [
   {
@@ -16,6 +17,12 @@ const routes: Routes = [
       { path: "login", component: LoginComponent },
       { path: "register", component: RegisterComponent }
     ]
+  },
+  {
+    path: "profile",
+    component: MusifyComponent,
+    canActivate: [ValidarTokenGuard],
+    children: [ { path: "", component: ProfileComponent } ]
   },
   { path: "**", redirectTo: "login" }
 ];
