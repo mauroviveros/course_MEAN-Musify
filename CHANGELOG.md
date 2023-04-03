@@ -1,3 +1,24 @@
+# [0.3.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.2.0...v0.3.0) (2023-04-03)
+
+
+### Bug Fixes
+
+* :lipstick: update profile ([648efb9](https://github.com/maurodviveros/course_MEAN-Musify/commit/648efb955218776955bfbef36ed0f9133ee3fd3b))
+
+
+### Features
+
+* **course:** :white_check_mark: 66. Método para actualizar el usuario en el servicio ([1dac041](https://github.com/maurodviveros/course_MEAN-Musify/commit/1dac0410cbddfb18b1f519316b040d81451260f9))
+* **course:** :white_check_mark: 67. Componente para la sección de mis datos ([4b860ee](https://github.com/maurodviveros/course_MEAN-Musify/commit/4b860ee7e09f1d3d3f4eeddfef23d873fef6d79a))
+* **course:** :white_check_mark: 68. Crear menú de navegación ([4c0763f](https://github.com/maurodviveros/course_MEAN-Musify/commit/4c0763f0c2ba91fe20dd19ec8102e7fd2f227099))
+* **course:** :white_check_mark: 69. Configurar el routing ([ed9ebc6](https://github.com/maurodviveros/course_MEAN-Musify/commit/ed9ebc64c9b2853d99085adcff4340babf978254))
+* **course:** :white_check_mark: 70. Formulario de actualización del usuario ([cd618b1](https://github.com/maurodviveros/course_MEAN-Musify/commit/cd618b1ae31c12cdd9e330608e16d6fe96d2cfff))
+* **course:** :white_check_mark: 71. Actualizar los datos usuario ([9caf823](https://github.com/maurodviveros/course_MEAN-Musify/commit/9caf823ab6174c58ec7a3a3710701c553dc97097))
+* **course:** :white_check_mark: 73. Subir el avatar del usuario ([194bd11](https://github.com/maurodviveros/course_MEAN-Musify/commit/194bd1170a73d3180e055f230cd2f600a9eb8803))
+* **course:** :white_check_mark: 75. Maquetar barra lateral ([7688201](https://github.com/maurodviveros/course_MEAN-Musify/commit/76882015190ecb8f55a72f28a846bcea44c60481))
+
+
+
 # [0.2.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.1.1...v0.2.0) (2023-04-02)
 
 
