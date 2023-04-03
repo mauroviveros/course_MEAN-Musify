@@ -1,5 +1,13 @@
-<nav>
+<div class="d-flex flex-column flex-grow-1">
   <ul>
+    <li>
+      <a class="btn btn-link logo">
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="logo">
+      </a>
+    </li>
+  </ul>
+
+  <ul class="flex-grow-1 main">
     <li *ngFor="let link of links">
       <a class="btn btn-link">
         <i class="material-icons">{{ link.icon }}</i>
@@ -7,4 +15,25 @@
       </a>
     </li>
   </ul>
-</nav>
+</div>
+
+<ul>
+  <li class="profile">
+    <div>
+      <img [src]="imgProfileURL" alt="Profile IMG" class="rounded">
+      <span>{{ user.name }} {{ user.surname }}</span>
+    </div>
+  </li>
+  <li>
+    <a class="btn btn-link" routerLink="/profile">
+      <i class="material-icons">settings</i>
+      <span>Mis datos</span>
+    </a>
+  </li>
+  <li>
+    <button class="btn btn-link" (click)="logout()">
+      <i class="material-icons">logout</i>
+      <span>Cerrar sesión</span>
+    </button>
+  </li>
+</ul>

@@ -8,7 +8,6 @@ const routes: Routes = [
     path: "",
     loadChildren: ()=> import("./modules/musify/musify.module").then(m => m.MusifyModule),
     canActivate: [ValidarTokenGuard],
-    canLoad: [ValidarTokenGuard],
     component: MusifyComponent
   },
   {

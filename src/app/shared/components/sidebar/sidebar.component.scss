@@ -1,0 +1,50 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+  background-color: #1C1C1F;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+ul{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: .5rem;
+
+  li{
+    a, div, button{
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #FFF;
+
+      span{
+        font-size: 1rem;
+        font-weight: bold;
+      };
+
+      i.material-icons, img{
+        font-size: 2rem;
+        width: 2rem;
+        height: 2rem;
+      };
+    };
+
+    &:not(.profile):hover{
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    a.logo img{
+      width: 70%;
+      height: 70%;
+    }
+  };
+
+  &.main{
+    border-bottom: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+  }
+}
