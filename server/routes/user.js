@@ -17,7 +17,7 @@ API.get("/user", auth_md.ensureAuth, UserCtrl.getUser);
 API.put("/user", auth_md.ensureAuth, UserCtrl.updateUser);
 
 API.get("/user/:_id/image", UserCtrl.getImage);
-API.post("/user/:_id/image", [auth_md.ensureAuth, upload_md], UserCtrl.uploadImage);
+API.put("/user/:_id/image", [auth_md.ensureAuth, upload_md], UserCtrl.uploadImage);
 
 
 module.exports = API;

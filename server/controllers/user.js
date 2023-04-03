@@ -74,13 +74,12 @@ async function uploadImage(req, res){
       file_ext  = path.extname(file_name);
     } else throw new Error("No has subido ninguna imagen...");
 
-
-
     if(file_ext === ".png" || file_ext === ".jpg" || file_ext === ".gif"){
       const userUPD = await User.findByIdAndUpdate(userID, { image: file_name }, { new: true });
       return res.status(200).send({ user: userUPD });
     } else throw new Error("Extension del archivo no valida");
   } catch(error){
+    console.log(error);
     return res.status(400).send({ message: "Error al actualizar la imagen del usuario", error: { message: error.message } });
   };
 };
@@ -89,7 +88,6 @@ async function getImage(req, res){
   const userID = req.params._id;
 
   try{
-    console.log(req.user);
     const userDB = await User.findById(userID);
     if(!userDB) throw new Error("No existe el usuario");
     let path_file = `./uploads/users/${userDB.image}`;

@@ -9,7 +9,7 @@ import { AuthService } from '../../auth.service';
 })
 export class ProfileComponent {
   @ViewChild("inputFile") inputFile: ElementRef = {} as ElementRef;
-
+  public file: File = {} as File;
   public imageSrc: string | null = null;
 
   public get imgProfileURL (){
@@ -32,12 +32,18 @@ export class ProfileComponent {
   };
 
   onFileSelected(event:any){
-    const file: File = event.target.files[0];
+    this.file = event.target?.files[0];
     const reader = new FileReader();
 
     reader.onload = (e: any) => { this.imageSrc = e.target.result; };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(this.file);
   };
+
+  updateIMG(){
+    this._auth.updateUserIMG(this.file).subscribe(response => {
+      console.log(response);
+    })
+  }
 
 
   submit(){
