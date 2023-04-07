@@ -18,6 +18,11 @@
   position: relative;
   cursor: pointer;
 
+  img{
+    max-height: 200px;
+    min-width: 100%;
+  }
+
 
   .overlay{
     position: absolute;

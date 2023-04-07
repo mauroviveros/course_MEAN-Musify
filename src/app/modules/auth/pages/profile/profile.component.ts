@@ -41,10 +41,13 @@ export class ProfileComponent {
 
   updateIMG(){
     this._auth.updateUserIMG(this.file).subscribe(response => {
-      console.log(response);
+      Swal.fire({
+        title: "Foto del usuario",
+        text: "Foto de Perfil Actualizada correctamente",
+        icon: "success"
+      })
     })
   }
-
 
   submit(){
     if(this.form.invalid) return;
