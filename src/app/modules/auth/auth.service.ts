@@ -4,7 +4,7 @@ import { catchError, map, tap } from "rxjs/operators";
 
 import { environment } from '../../../environments/environment';
 import { AuthReqest, AuthResponse, User } from './interfaces/user';
-import { of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 
 
@@ -19,6 +19,9 @@ export class AuthService {
     return this.USER;
   }
 
+  private userSubject = new BehaviorSubject<User>(this.user);
+  public user$ = this.userSubject.asObservable();
+
   constructor(
     private _http: HttpClient,
     private _router: Router
@@ -27,6 +30,7 @@ export class AuthService {
   private _tapResponse(resp: AuthResponse){
     if(resp.token) localStorage.setItem("token", resp.token);
     this.USER = resp.user;
+    this.userSubject.next(this.USER);
   };
 
   private _catchError(err: HttpErrorResponse){

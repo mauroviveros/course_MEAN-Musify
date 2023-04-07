@@ -58,7 +58,7 @@ export class ProfileComponent {
         title: "Detalle del Usuario",
         text: "Usuario Actualizado correctamente",
         icon: "success"
-      })
+      });
     })
   }
 }
