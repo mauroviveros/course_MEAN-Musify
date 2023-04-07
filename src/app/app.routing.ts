@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ValidarTokenGuard } from './modules/auth/guards/validar-token.guard';
-import { MusifyComponent } from './pages/musify/musify.component';
+import { MusifyComponent } from './shared/pages/musify/musify.component';
 
 const routes: Routes = [
   {

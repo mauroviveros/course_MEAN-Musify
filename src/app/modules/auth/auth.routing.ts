@@ -6,8 +6,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 
-import { MusifyComponent } from '../../pages/musify/musify.component';
+
 import { ValidarTokenGuard } from './guards/validar-token.guard';
+import { MusifyComponent } from '../../shared/pages/musify/musify.component';
 
 const routes: Routes = [
   {
