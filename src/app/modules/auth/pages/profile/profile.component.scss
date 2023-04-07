@@ -1,25 +1,22 @@
 :host{
   display: flex;
   flex-direction: column;
-  .container{
+  .row{
     flex: 1;
     display: flex;
-    flex-direction: column;
-    .row{
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    justify-content: center;
+    align-items: center;
   }
 }
 .hover-overlay{
   position: relative;
+  margin: auto;
+  width: fit-content;
   cursor: pointer;
 
   img{
-    max-height: 200px;
-    min-width: 100%;
+    height: 200px;
+    width: 200px;
   }
 
 
