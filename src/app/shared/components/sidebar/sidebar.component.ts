@@ -16,7 +16,7 @@ interface NavItem{
 export class SidebarComponent {
   public links: NavItem[] = [
     { icon: "search", text: "Buscar", router: "" },
-    { icon: "star_border", text: "Artistas", router: "" },
+    { icon: "star_border", text: "Artistas", router: "artist" },
     { icon: "book", text: "Albums", router: "" }
   ];
 

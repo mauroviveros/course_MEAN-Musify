@@ -1,7 +1,7 @@
 <div class="d-flex flex-column flex-grow-1">
   <ul>
     <li>
-      <a class="btn btn-link logo">
+      <a class="btn btn-link logo" routerLink="">
         <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="logo">
       </a>
     </li>
@@ -9,7 +9,7 @@
 
   <ul class="flex-grow-1 main">
     <li *ngFor="let link of links">
-      <a class="btn btn-link">
+      <a class="btn btn-link" [routerLink]="link.router">
         <i class="material-icons">{{ link.icon }}</i>
         <span>{{ link.text }}</span>
       </a>

@@ -6,9 +6,15 @@ import { MusifyComponent } from './shared/pages/musify/musify.component';
 const routes: Routes = [
   {
     path: "",
-    loadChildren: ()=> import("./modules/musify/musify.module").then(m => m.MusifyModule),
+    // loadChildren: ()=> import("./modules/musify/musify.module").then(m => m.MusifyModule),
     canActivate: [ValidarTokenGuard],
-    component: MusifyComponent
+    component: MusifyComponent,
+    children: [
+      {
+        path: "artist",
+        loadChildren: () => import("./modules/artist/artist.module").then(m => m.ArtistModule)
+      }
+    ]
   },
   {
     path: "",
