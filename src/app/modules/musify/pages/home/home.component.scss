@@ -1,0 +1,10 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .bg-body-tertiary{
+    background-color: rgb(248,249,250);
+  }
+}

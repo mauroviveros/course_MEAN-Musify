@@ -10,6 +10,10 @@ const routes: Routes = [
     component: MusifyComponent,
     children: [
       {
+        path: "",
+        loadChildren: () => import("./modules/musify/musify.module").then(m => m.MusifyModule)
+      },
+      {
         path: "artist",
         loadChildren: () => import("./modules/artist/artist.module").then(m => m.ArtistModule)
       }
