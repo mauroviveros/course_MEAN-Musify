@@ -1,3 +1,25 @@
+## [0.3.1](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.3.0...v0.3.1) (2023-04-07)
+
+
+### Bug Fixes
+
+* :adhesive_bandage: add class container in all router components ([0e4e2b6](https://github.com/maurodviveros/course_MEAN-Musify/commit/0e4e2b6b63324b428cdbe603ed10871d3a3ecb05))
+* :adhesive_bandage: fix issue sidebar ([36729e2](https://github.com/maurodviveros/course_MEAN-Musify/commit/36729e2d8a0312097760f91d2e2542e60c024a75))
+* :adhesive_bandage: fix min-height and disabled form ([6479de0](https://github.com/maurodviveros/course_MEAN-Musify/commit/6479de074f13a5bbda9796713a11fd33ae983924))
+* :adhesive_bandage: update main structure for router-outlet ([721647b](https://github.com/maurodviveros/course_MEAN-Musify/commit/721647bcc9a98c7d99262a3704927569e3a82f28))
+* :bug: update user data when updated ([c4ae22c](https://github.com/maurodviveros/course_MEAN-Musify/commit/c4ae22cc81ce242f7844159831b69f9075c8bec7))
+* :truck: move musify component on shared module ([6edfcf0](https://github.com/maurodviveros/course_MEAN-Musify/commit/6edfcf0a0d733be198ff069fa0d602bc35b678ff))
+
+
+### Features
+
+* :sparkles: add routerLink on settings ([947e627](https://github.com/maurodviveros/course_MEAN-Musify/commit/947e627d83580abb200e6bf8c72c783bc3af215c))
+* **course:** :white_check_mark: 76. Componente para el listado de artistas ([536a2d6](https://github.com/maurodviveros/course_MEAN-Musify/commit/536a2d67549093f9bb4341ce5ef21a1360eca7f3))
+* **course:** :white_check_mark: 77. Marcar elementos del menú con Angular 2 ([fb6b5ed](https://github.com/maurodviveros/course_MEAN-Musify/commit/fb6b5ed701b28b55b3483e0b5a601b5f2ef5482d))
+* **course:** :white_check_mark: 78. Mostrar el botón de añadir artista ([985077c](https://github.com/maurodviveros/course_MEAN-Musify/commit/985077c5693c28e2161c1a27a706e7365647b532))
+
+
+
 # [0.3.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.2.0...v0.3.0) (2023-04-03)
 
 
