@@ -98,4 +98,8 @@ export class AuthService {
     this.USER = {} as User;
     this._router.navigate(["login"]);
   };
+
+  hasAdminRole(){
+    return this.user.role === "ADMIN";
+  };
 };
