@@ -16,16 +16,16 @@ const routes: Routes = [
       {
         path: "artist",
         loadChildren: () => import("./modules/artist/artist.module").then(m => m.ArtistModule)
-      },
-      {
-        path: "**",
-        redirectTo: ""
       }
     ]
   },
   {
-    path: "",
+    path: "auth",
     loadChildren: ()=> import("./modules/auth/auth.module").then(m => m.AuthModule)
+  },
+  {
+    path: "**",
+    redirectTo: ""
   }
 ];
 

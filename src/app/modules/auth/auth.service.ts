@@ -96,7 +96,7 @@ export class AuthService {
   logout(){
     localStorage.removeItem("token");
     this.USER = {} as User;
-    this._router.navigate(["login"]);
+    this._router.navigate(["auth", "login"]);
   };
 
   hasAdminRole(){

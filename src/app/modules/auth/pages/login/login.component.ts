@@ -10,7 +10,7 @@ import { AuthService } from "../../auth.service";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent {
-  public rememberControl: FormControl = new FormControl(false);
+  public showControl: FormControl = new FormControl(false);
 
   public form: FormGroup = this._formBuilder.group({
     email: [null, [Validators.required, Validators.email]],
@@ -36,7 +36,7 @@ export class LoginComponent {
     if(this.form.invalid) return Object.values(this.form.controls).forEach(control => control.markAsDirty());
 
     const { email, password } = this.form.value;
-    this._auth.login(email, password, this.rememberControl.value).subscribe(response => {
+    this._auth.login(email, password, true).subscribe(response => {
       if(typeof response !== "boolean") return Swal.fire("Error", response, "error");
       return this._router.navigate([""]);
     });

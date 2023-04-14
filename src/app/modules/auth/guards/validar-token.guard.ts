@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { Router, UrlTree } from '@angular/router';
+import { Observable, from, map, of, switchMap, tap } from 'rxjs';
 import { AuthService } from '../auth.service';
 
 @Injectable({
@@ -9,24 +9,26 @@ import { AuthService } from '../auth.service';
 export class ValidarTokenGuard{
 
   constructor(
-    private _auth: AuthService,
-    private _router: Router
+    private auth: AuthService,
+    private router: Router
   ){};
 
   private _validarToken(){
-    return this._auth.getUser().pipe(
-      tap(valid => {
-        if(valid === true) return;
-        this._router.navigate(["/login"]);
-      })
-    )
-
+    return of(localStorage.getItem("token")).pipe(
+      map(token => {
+        return !token ? this.router.parseUrl("/auth/login") : token;
+      }),
+      switchMap(response => {
+        return typeof response === "string" ? this.auth.getUser() : of(response)
+      }),
+      map(valid => valid === true ? true : this.router.parseUrl("/auth/login"))
+    );
   }
 
-  canActivate(): Observable<string | boolean> {
+  canActivate(): Observable<UrlTree | boolean> {
     return this._validarToken();
   }
-  canLoad(): Observable<string | boolean> {
+  canLoad(): Observable<UrlTree | boolean> {
     return this._validarToken();
   }
 }

@@ -24,8 +24,7 @@ const routes: Routes = [
     component: MusifyComponent,
     canActivate: [ValidarTokenGuard],
     children: [ { path: "", component: ProfileComponent } ]
-  },
-  { path: "**", redirectTo: "login" }
+  }
 ];
 
 @NgModule({

@@ -7,13 +7,4 @@ import { User } from 'src/app/modules/auth/interfaces/user';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  public user: User = this._auth.user;
-  constructor(
-    private _auth: AuthService
-  ){}
-
-  logout(){
-    this._auth.logout();
-  }
-}
+export class HomeComponent {}
