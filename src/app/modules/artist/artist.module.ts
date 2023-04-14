@@ -8,6 +8,7 @@ import { NewComponent } from './pages/new/new.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './pages/detail/detail.component';
 import { FormComponent } from './components/form/form.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormComponent } from './components/form/form.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ArtistRoutingModule
+    ArtistRoutingModule,
+    SharedModule
   ]
 })
 export class ArtistModule { }

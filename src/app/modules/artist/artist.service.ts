@@ -22,6 +22,10 @@ export class ArtistService {
     return of(message);
   };
 
+  getImg(_id: string){
+    return `${this.ENDPOINT}/${_id}/image`;
+  }
+
   getList(){
     return this.http.get<Artist>(`${this.ENDPOINT}`, { headers: this.headers });
   }
@@ -34,6 +38,15 @@ export class ArtistService {
     return this.http.put<Artist>(`${this.ENDPOINT}/${_id}`, body, { headers: this.headers }).pipe(
       catchError(this.catchError)
     );
+  }
+
+  updateIMG(_id: string, file: File){
+    const fd = new FormData();
+    fd.append("image", file, file.name);
+
+    return this.http.post<Artist>(`${this.ENDPOINT}/${_id}/image`, fd, { headers: this.headers }).pipe(
+      catchError(this.catchError)
+    )
   }
 
 
