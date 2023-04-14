@@ -1,0 +1,10 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  .row{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

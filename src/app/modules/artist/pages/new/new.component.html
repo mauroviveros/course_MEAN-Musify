@@ -1,0 +1,32 @@
+<h1>Crear nuevo Artista</h1>
+<hr>
+
+<div class="row">
+  <div class="col-10">
+    <form class="card shadow" [formGroup]="form" (submit)="submit()">
+      <div class="card-header">Detalle de la cuenta</div>
+      <div class="card-body">
+
+        <div class="mb-3">
+          <label for="name">Nombre:</label>
+          <div class="input-group">
+            <div class="input-group-text"><i class="material-icons">account_box</i></div>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="Ingrese el nombre del artista">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description">Descripción:</label>
+          <div class="input-group">
+            <div class="input-group-text"><i class="material-icons">description</i></div>
+            <textarea class="form-control" id="description" name="description" formControlName="description" cols="30" placeholder="Ingrese una descripción del artista"></textarea>
+            <div class="invalid-feedback">El campo es obligatorio</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <input type="submit" class="btn btn-success" value="Crear Artista" [disabled]="!form.dirty">
+      </div>
+    </form>
+  </div>
+</div>
