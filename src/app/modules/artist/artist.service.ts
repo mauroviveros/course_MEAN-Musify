@@ -9,7 +9,8 @@ import { Artist, ArtistRequest } from "./artist.interface";
   providedIn: 'root'
 })
 export class ArtistService {
-  private ENDPOINT: string = environment.ENDPOINT;
+  private ENDPOINT: string = `${environment.ENDPOINT}/artists`;
+  private headers = new HttpHeaders().set("Authorization", localStorage.getItem("token") || "");
 
   constructor(
     private http: HttpClient
@@ -21,10 +22,13 @@ export class ArtistService {
     return of(message);
   };
 
+  get(_id: string){
+    return this.http.get<Artist>(`${this.ENDPOINT}/${_id}`, { headers: this.headers });
+  }
+
 
   add(body: ArtistRequest){
-    const headers = new HttpHeaders().set("Authorization", localStorage.getItem("token") || "");
-    return this.http.post<Artist>(`${this.ENDPOINT}/artists`, body, { headers }).pipe(
+    return this.http.post<Artist>(`${this.ENDPOINT}`, body, { headers: this.headers }).pipe(
       catchError(this.catchError)
     );
   }
