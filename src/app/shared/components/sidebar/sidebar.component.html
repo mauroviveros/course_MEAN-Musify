@@ -9,7 +9,7 @@
 
   <ul class="flex-grow-1 main">
     <li *ngFor="let link of links">
-      <a class="btn btn-link" [routerLink]="link.router" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a class="btn btn-link" [routerLink]="link.router" routerLinkActive="active">
         <i class="material-icons">{{ link.icon }}</i>
         <span>{{ link.text }}</span>
       </a>

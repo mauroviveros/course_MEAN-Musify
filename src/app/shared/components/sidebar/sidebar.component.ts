@@ -16,9 +16,9 @@ interface NavItem{
 export class SidebarComponent {
   public timestamp = new Date().getTime();
   public links: NavItem[] = [
-    { icon: "search", text: "Buscar", router: "" },
+    { icon: "search", text: "Buscar", router: "/search" },
     { icon: "star_border", text: "Artistas", router: "/artist" },
-    { icon: "book", text: "Albums", router: "" }
+    { icon: "book", text: "Albums", router: "/album" }
   ];
 
   public user: User = this._auth.user;
