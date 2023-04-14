@@ -26,6 +26,12 @@ export class ArtistService {
     return this.http.get<Artist>(`${this.ENDPOINT}/${_id}`, { headers: this.headers });
   }
 
+  update(_id: string, body: ArtistRequest){
+    return this.http.put<Artist>(`${this.ENDPOINT}/${_id}`, body, { headers: this.headers }).pipe(
+      catchError(this.catchError)
+    );
+  }
+
 
   add(body: ArtistRequest){
     return this.http.post<Artist>(`${this.ENDPOINT}`, body, { headers: this.headers }).pipe(
