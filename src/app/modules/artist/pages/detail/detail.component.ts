@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtistService } from '../../artist.service';
 import { Artist, ArtistRequest } from '../../artist.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-detail',
@@ -22,6 +23,12 @@ export class DetailComponent {
   }
 
   public submitData(data: ArtistRequest){
-    console.log(data);
+    if(!this.artist) return;
+    Swal.fire("actualizando Artista", undefined, "info");
+    Swal.showLoading();
+    this.artistService.update(this.artist._id, data as ArtistRequest).subscribe(response => {
+      if(typeof response === "string") return Swal.fire("actualizando Artista", response, "error");
+      return Swal.fire("actualizando Artista", "Artista actualizado correctamente", "success");
+    })
   }
 }
