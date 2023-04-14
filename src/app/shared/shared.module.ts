@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MusifyComponent } from './pages/musify/musify.component';
+import { UpdateImgComponent } from './components/update-img/update-img.component';
 
 
 const components = [
   SidebarComponent,
-  MusifyComponent
+  MusifyComponent,
+  UpdateImgComponent
 ]
 
 @NgModule({
