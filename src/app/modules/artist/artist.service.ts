@@ -22,6 +22,10 @@ export class ArtistService {
     return of(message);
   };
 
+  getList(){
+    return this.http.get<Artist>(`${this.ENDPOINT}`, { headers: this.headers });
+  }
+
   get(_id: string){
     return this.http.get<Artist>(`${this.ENDPOINT}/${_id}`, { headers: this.headers });
   }
