@@ -31,4 +31,18 @@ export class DetailComponent {
       return Swal.fire("actualizando Artista", "Artista actualizado correctamente", "success");
     })
   }
+
+  public submitIMG(file: File){
+    if(!this.artist) return;
+    Swal.fire("actualizando IMG Artista", undefined, "info");
+    Swal.showLoading();
+
+    this.artistService.updateIMG(this.artist._id, file).subscribe(_ => {
+      Swal.fire({
+        title: "actualizando IMG Artista",
+        text: "Foto de Artista actualizada correctamente",
+        icon: "success"
+      })
+    })
+  }
 }
