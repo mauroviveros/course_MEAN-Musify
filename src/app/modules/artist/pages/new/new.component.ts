@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ArtistService } from '../../artist.service';
+
+import { ArtistRequest } from "../../artist.interface";
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new',
@@ -13,12 +18,20 @@ export class NewComponent {
   });
 
   constructor(
-    private formBuilder: FormBuilder
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private artistService: ArtistService
   ){}
 
   public submit(){
     if(this.form.invalid) return;
 
-    console.log(this.form.value);
+    Swal.fire("creando Artista", undefined, "info");
+    Swal.showLoading();
+    this.artistService.add(this.form.value as ArtistRequest).subscribe(response => {
+      if(typeof response === "string") return Swal.fire("creando Artista", response, "error");
+      return Swal.fire("creando Artista", "Artista creado correctamente", "success");
+      // return this.router.navigate(["artist", response._id]);
+    })
   }
 }

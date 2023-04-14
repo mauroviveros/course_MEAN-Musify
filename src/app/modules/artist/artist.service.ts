@@ -25,7 +25,6 @@ export class ArtistService {
   add(body: ArtistRequest){
     const headers = new HttpHeaders().set("Authorization", localStorage.getItem("token") || "");
     return this.http.post<Artist>(`${this.ENDPOINT}/artists`, body, { headers }).pipe(
-      map(_ => true),
       catchError(this.catchError)
     );
   }
