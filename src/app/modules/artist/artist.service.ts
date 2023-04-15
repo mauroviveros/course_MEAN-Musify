@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { catchError, of } from 'rxjs';
+import { catchError, filter, from, of, switchMap, tap } from 'rxjs';
 
 import { Artist, ArtistList, ArtistPagination, ArtistRequest } from "./artist.interface";
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +58,20 @@ export class ArtistService {
 
   add(body: ArtistRequest){
     return this.http.post<Artist>(`${this.ENDPOINT}`, body, { headers: this.headers }).pipe(
+      catchError(this.catchError)
+    );
+  }
+
+  remove(artist: Artist){
+    return from(Swal.fire({
+      title: "Borrando Artista",
+      text: `Esta seguro que desea borrar el artista: ${artist.name}?`,
+      icon: "question",
+      showCancelButton: true,
+    })).pipe(
+      filter(result => result.isConfirmed),
+      switchMap(() => this.http.delete<Artist>(`${this.ENDPOINT}/${artist._id}`, { headers: this.headers })),
+      tap(() => Swal.fire({ title: "Borrando Artista", text: `Artista: ${artist.name}. Borrado correctamente`, icon: "success", })),
       catchError(this.catchError)
     );
   }

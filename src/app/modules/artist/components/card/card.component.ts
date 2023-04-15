@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Artist } from '../../artist.interface';
 import { ArtistService } from '../../artist.service';
 
@@ -9,6 +9,7 @@ import { ArtistService } from '../../artist.service';
 })
 export class CardComponent {
   @Input() artist?: Artist;
+  @Output() onDeleted = new EventEmitter<Artist>();
 
   public get img(){
      return (this.artist?._id ? this.artistService.getImg(this.artist._id) : null)
@@ -20,8 +21,8 @@ export class CardComponent {
 
   public remove(){
     if(!this.artist) return;
-    // this.artistService.delete(this.artist._id).subscribe(_ => {
-
-    // })
+    this.artistService.remove(this.artist).subscribe(_ => {
+      this.onDeleted.emit(this.artist);
+    })
   }
 }

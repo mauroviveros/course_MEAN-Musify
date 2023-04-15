@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../auth/auth.service';
 import { ArtistService } from '../../artist.service';
-import { ArtistList } from '../../artist.interface';
-import { ActivatedRoute } from '@angular/router';
+import { Artist, ArtistList } from '../../artist.interface';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs';
 
 @Component({
@@ -19,6 +19,7 @@ export class ListComponent {
   constructor(
     private auth: AuthService,
     private route: ActivatedRoute,
+    private router: Router,
     private artistService: ArtistService
   ){
     this.route.queryParamMap.pipe(
@@ -27,5 +28,11 @@ export class ListComponent {
     ).subscribe(listData => {
       this.listData = listData;
     });
+  }
+
+  public onDeleted(artist: Artist){
+    this.listData.docs.splice(this.listData.docs.indexOf(artist), 1);
+    if(this.listData.docs.length || !this.listData.hasPrevPage) return;
+    this.router.navigate([], { queryParams: { page: this.listData.prevPage } });
   }
 }

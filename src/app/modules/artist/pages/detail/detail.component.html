@@ -3,12 +3,8 @@
   <section>
     <h1>{{ artist?.name }}</h1>
     <p>{{ artist?.description }}</p>
-    <button class="btn btn-secondary">Añadir album</button>
+    <button class="btn btn-secondary me-1">Añadir album</button>
+    <button class="btn btn-danger" (click)="remove()">Borrar artista</button>
   </section>
 </header>
 <hr>
-
-<!-- <div class="row" *ngIf="artist">
-    <shared-update-img class="col-4" [artist]="artist"  (submitted)="submitIMG($event)" text="Foto del Artista"></shared-update-img>
-    <artist-form class="col-6" [artist]="artist" (submitted)="submitData($event)" actionText="Actualizar Artista"></artist-form>
-</div> -->

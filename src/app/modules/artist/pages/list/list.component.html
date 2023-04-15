@@ -24,7 +24,7 @@
       </ul>
     </nav>
     <article>
-      <artist-card *ngFor="let artist of listData.docs" [artist]="artist"></artist-card>
+      <artist-card *ngFor="let artist of listData.docs" [artist]="artist" (onDeleted)="onDeleted($event)"></artist-card>
     </article>
   </section>
 </ng-template>
