@@ -1,3 +1,39 @@
+# [0.4.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.3.1...v0.4.0) (2023-04-15)
+
+
+### Bug Fixes
+
+* :adhesive_bandage: fix auth forms ([9e0dff7](https://github.com/maurodviveros/course_MEAN-Musify/commit/9e0dff779120171a049b62bdc57fbe92530a3b29))
+* :adhesive_bandage: fix columns in profile ([1dacd5f](https://github.com/maurodviveros/course_MEAN-Musify/commit/1dacd5f3a760d69fba689803d5730f04817f22bd))
+* :adhesive_bandage: routerLinkActive without exact ([62e28af](https://github.com/maurodviveros/course_MEAN-Musify/commit/62e28af9b94478f2962f3bfd645555d2838f76f8))
+* :bug: fix authGuard ([d7804ad](https://github.com/maurodviveros/course_MEAN-Musify/commit/d7804adafb77fe1ffa60bcbb016385980a4e098a))
+
+
+### Features
+
+* :alien: add getArtist in service ([1c11de9](https://github.com/maurodviveros/course_MEAN-Musify/commit/1c11de9ec2e36ae1927ddba67d89379075206d26))
+* :sparkles: add formComponent for artist ([de7b716](https://github.com/maurodviveros/course_MEAN-Musify/commit/de7b716cc867221841a4b7bc95d5b578d9ff82c5))
+* :sparkles: init updateIMG form ([1b75710](https://github.com/maurodviveros/course_MEAN-Musify/commit/1b75710b1565c43d65a7e7c65b8e2476d7e370ad))
+* :sparkles: use formComponent for artist ([5d5ec51](https://github.com/maurodviveros/course_MEAN-Musify/commit/5d5ec51aadb89918de1d469ae4e85b433c879362))
+* **course:** :white_check_mark: 79. Página Home ([c5c07eb](https://github.com/maurodviveros/course_MEAN-Musify/commit/c5c07eb78ad04e0fe6f86bb499beac97825be4e2))
+* **course:** :white_check_mark: 80. Componente y formulario de añadir artista ([fb8574e](https://github.com/maurodviveros/course_MEAN-Musify/commit/fb8574e401db4fefd6c22610575373b668a7391c))
+* **course:** :white_check_mark: 81. Servicio para Artistas ([2cf2a46](https://github.com/maurodviveros/course_MEAN-Musify/commit/2cf2a464bc3abf69001f41d22018674f15f4bf13))
+* **course:** :white_check_mark: 82. Crear artista ([cde460d](https://github.com/maurodviveros/course_MEAN-Musify/commit/cde460d0a9d9adb42aaeca0a2cc545fa31c74a3d))
+* **course:** :white_check_mark: 83. Componente para editar artista ([b78e607](https://github.com/maurodviveros/course_MEAN-Musify/commit/b78e6076f31bf37535354cf3a3188b8b8244da9b))
+* **course:** :white_check_mark: 84. Métodos en el servicio de artista ([a38257e](https://github.com/maurodviveros/course_MEAN-Musify/commit/a38257e66b67bf236366ba6cdbcedfa43a11cdbc))
+* **course:** :white_check_mark: 85. Ruta y cargar datos en el formulario de editar artistas ([eb28fad](https://github.com/maurodviveros/course_MEAN-Musify/commit/eb28fadcb6e5cc597003c32c78094166b4ad9668))
+* **course:** :white_check_mark: 86. Editar los datos del artista ([69b70d4](https://github.com/maurodviveros/course_MEAN-Musify/commit/69b70d42b0f3bf4352b5824970eb80b641b64f62))
+* **course:** :white_check_mark: 87. Subir imagen del artista ([57ddcaa](https://github.com/maurodviveros/course_MEAN-Musify/commit/57ddcaa9e0df6b149b7687911f381f1b2162b5e4))
+* **course:** :white_check_mark: 88. Restringir acceso ([99f1c96](https://github.com/maurodviveros/course_MEAN-Musify/commit/99f1c96324f455f2ec73b2df0fcfae4f511c0ea3))
+* **course:** :white_check_mark: 89. Listar artistas ([98b3afa](https://github.com/maurodviveros/course_MEAN-Musify/commit/98b3afa0c261300f0c126cf80b0adb11f8975bca))
+* **course:** :white_check_mark: 90. Mostrar más datos de los artistas ([1cd4c79](https://github.com/maurodviveros/course_MEAN-Musify/commit/1cd4c792893252bd06942614ecbc4e98ee27762e))
+* **course:** :white_check_mark: 91. Maquetación del listado de artistas ([3785e29](https://github.com/maurodviveros/course_MEAN-Musify/commit/3785e29ac4b80562e952bc92d7998dc4c1cd3059))
+* **course:** :white_check_mark: 92. Detalle del artista ([67bfee4](https://github.com/maurodviveros/course_MEAN-Musify/commit/67bfee4e41839a1ae71d8b002b45371f46def02b))
+* **course:** :white_check_mark: 93. Estilos para el detalle del artista ([1dafcb2](https://github.com/maurodviveros/course_MEAN-Musify/commit/1dafcb284364bdcb6ba8000f2259f6a6c7390c8d))
+* **course:** :white_check_mark: 93. Estilos para el detalle del artista ([1260f05](https://github.com/maurodviveros/course_MEAN-Musify/commit/1260f051bfeeef8cddf15bf18bea01727c189c30))
+
+
+
 ## [0.3.1](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.3.0...v0.3.1) (2023-04-07)
 
 
