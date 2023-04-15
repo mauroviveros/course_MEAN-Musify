@@ -88,10 +88,10 @@ async function getImage(req, res){
   try{
     const artistDB = await Artist.findById(req.params._id);
     if(!artistDB) throw new Error("No existe el artista");
-    const path_file = `./uploads/artists/${artistDB.image}`;
+    let path_file = `./uploads/artists/${artistDB.image}`;
     const imageBool = await fs.existsSync(path_file);
 
-    if(!imageBool) throw new Error("No existe la imagen");
+    if(!imageBool) path_file = "./uploads/artists/empty.png";
 
     res.sendFile(path.resolve(path_file));
   } catch(error){

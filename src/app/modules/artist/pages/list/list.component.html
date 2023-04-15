@@ -23,5 +23,8 @@
         </li>
       </ul>
     </nav>
+    <article>
+      <artist-card *ngFor="let artist of listData.docs" [artist]="artist"></artist-card>
+    </article>
   </section>
 </ng-template>

@@ -15,13 +15,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    nav{
+      display: flex;
+      justify-content: center;
+
+      .page-item{
+        cursor: pointer;
+        &.disabled{ cursor: not-allowed; }
+        .page-link .material-icons{ font-size: inherit; }
+      }
+    }
+
+    article{
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
   }
 
-  .page-item{
-    cursor: pointer;
-    &.disabled{ cursor: not-allowed; }
-    .page-link .material-icons{ font-size: inherit; }
-  }
 }
 
 @keyframes progress-indeterminate {

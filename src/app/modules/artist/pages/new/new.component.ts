@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-new',
+  selector: 'artist-new',
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.scss']
 })

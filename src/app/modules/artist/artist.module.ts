@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './pages/detail/detail.component';
 import { FormComponent } from './components/form/form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ListComponent,
     NewComponent,
     DetailComponent,
-    FormComponent
+    FormComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

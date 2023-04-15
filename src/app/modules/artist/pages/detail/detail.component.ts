@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/modules/auth/auth.service';
 import { filter, of, switchMap, tap } from 'rxjs';
 
 @Component({
-  selector: 'app-detail',
+  selector: 'artist-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
