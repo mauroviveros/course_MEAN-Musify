@@ -6,11 +6,11 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'artist-new',
-  templateUrl: './new.component.html',
-  styleUrls: ['./new.component.scss']
+  selector: 'artist-create',
+  templateUrl: './create.component.html',
+  styleUrls: ['./create.component.scss']
 })
-export class NewComponent {
+export class CreateComponent {
   constructor(
     private router: Router,
     private artistService: ArtistService
