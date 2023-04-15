@@ -1,7 +1,14 @@
-<h1>Editar Artista</h1>
+<header>
+  <img [src]="img" class="card-img-top" [alt]="artist?.name">
+  <section>
+    <h1>{{ artist?.name }}</h1>
+    <p>{{ artist?.description }}</p>
+    <button class="btn btn-secondary">Añadir album</button>
+  </section>
+</header>
 <hr>
 
-<div class="row" *ngIf="artist">
+<!-- <div class="row" *ngIf="artist">
     <shared-update-img class="col-4" [artist]="artist"  (submitted)="submitIMG($event)" text="Foto del Artista"></shared-update-img>
     <artist-form class="col-6" [artist]="artist" (submitted)="submitData($event)" actionText="Actualizar Artista"></artist-form>
-</div>
+</div> -->

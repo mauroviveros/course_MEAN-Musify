@@ -1,10 +1,12 @@
 <div class="card">
-  <img [src]="img" class="card-img-top" alt="...">
+  <a [routerLink]="[artist?._id]">
+      <img [src]="img" class="card-img-top" [alt]="artist?.name">
+  </a>
   <div class="card-body">
     <h5 class="card-title">{{ artist?.name }}</h5>
     <p class="card-text">{{ artist?.description }}</p>
 
-    <a class="btn btn-primary me-1" [routerLink]="[artist?._id]">Editar</a>
+    <a class="btn btn-primary me-1" [routerLink]="[artist?._id + '/update']">Editar</a>
     <button class="btn btn-danger" (click)="remove()">Borrar</button>
   </div>
 </div>
