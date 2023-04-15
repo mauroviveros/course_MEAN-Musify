@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArtistService } from '../../artist.service';
 import { Artist, ArtistRequest } from '../../artist.interface';
 import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/modules/auth/auth.service';
+import { filter, of, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-detail',
@@ -14,10 +16,20 @@ export class DetailComponent {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
+    private auth: AuthService,
     private artistService: ArtistService
   ){
+    Swal.fire("obteniendo Artista", undefined, "info");
+    Swal.showLoading();
 
-    this.artistService.get(this.route.snapshot.paramMap.get("_id") as string).subscribe(response => {
+    of(this.auth.user.role).pipe(
+      tap(role => role !== "ADMIN" ? Swal.fire("obteniendo Artista", "no tienes permisos para ver este artista", "error") : null ),
+      tap(role => role !== "ADMIN" ? this.router.navigate([""]) : null ),
+      filter(role => role === "ADMIN"),
+      switchMap(() => this.artistService.get(this.route.snapshot.paramMap.get("_id") as string))
+    ).subscribe(response => {
+      Swal.close();
       this.artist = response;
     });
   }
