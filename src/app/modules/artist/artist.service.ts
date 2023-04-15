@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { catchError, map, of } from 'rxjs';
+import { catchError, of } from 'rxjs';
 
-import { Artist, ArtistRequest } from "./artist.interface";
+import { Artist, ArtistList, ArtistPagination, ArtistRequest } from "./artist.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,11 @@ import { Artist, ArtistRequest } from "./artist.interface";
 export class ArtistService {
   private ENDPOINT: string = `${environment.ENDPOINT}/artists`;
   private headers = new HttpHeaders().set("Authorization", localStorage.getItem("token") || "");
+
+  private pagination: ArtistPagination = {
+    page: 1,
+    limit: 3
+  }
 
   constructor(
     private http: HttpClient
@@ -26,8 +31,11 @@ export class ArtistService {
     return `${this.ENDPOINT}/${_id}/image`;
   }
 
-  getList(){
-    return this.http.get<Artist>(`${this.ENDPOINT}`, { headers: this.headers });
+  getList(pagination?: ArtistPagination){
+    const params = new HttpParams()
+      .set("page", this.pagination.page)
+      .set("limit", this.pagination.limit);
+    return this.http.get<ArtistList>(`${this.ENDPOINT}`, { headers: this.headers, params });
   }
 
   get(_id: string){

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../auth/auth.service';
+import { ArtistService } from '../../artist.service';
 
 @Component({
   selector: 'app-list',
@@ -8,10 +9,15 @@ import { AuthService } from '../../../auth/auth.service';
 })
 export class ListComponent {
   public get isAdmin(): boolean{
-    return this._auth.hasAdminRole();
+    return this.auth.hasAdminRole();
   }
 
   constructor(
-    private _auth: AuthService
-  ){}
+    private auth: AuthService,
+    private artistService: ArtistService
+  ){
+    this.artistService.getList().subscribe(response => {
+      console.log(response);
+    })
+  }
 }

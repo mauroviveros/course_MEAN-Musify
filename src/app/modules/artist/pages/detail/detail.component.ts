@@ -23,10 +23,10 @@ export class DetailComponent {
     Swal.fire("obteniendo Artista", undefined, "info");
     Swal.showLoading();
 
-    of(this.auth.user.role).pipe(
-      tap(role => role !== "ADMIN" ? Swal.fire("obteniendo Artista", "no tienes permisos para ver este artista", "error") : null ),
-      tap(role => role !== "ADMIN" ? this.router.navigate([""]) : null ),
-      filter(role => role === "ADMIN"),
+    of(this.auth.hasAdminRole()).pipe(
+      tap(role => !role ? Swal.fire("obteniendo Artista", "no tienes permisos para ver este artista", "error") : null ),
+      tap(role => !role ? this.router.navigate([""]) : null ),
+      filter(role => role),
       switchMap(() => this.artistService.get(this.route.snapshot.paramMap.get("_id") as string))
     ).subscribe(response => {
       Swal.close();
