@@ -12,10 +12,7 @@ export class ArtistService {
   private ENDPOINT: string = `${environment.ENDPOINT}/artists`;
   private headers = new HttpHeaders().set("Authorization", localStorage.getItem("token") || "");
 
-  private pagination: ArtistPagination = {
-    page: 1,
-    limit: 3
-  }
+  private limit = 3;
 
   constructor(
     private http: HttpClient
@@ -31,10 +28,10 @@ export class ArtistService {
     return `${this.ENDPOINT}/${_id}/image`;
   }
 
-  getList(pagination?: ArtistPagination){
+  getList(page: number){
     const params = new HttpParams()
-      .set("page", this.pagination.page)
-      .set("limit", this.pagination.limit);
+      .set("page", page)
+      .set("limit", this.limit);
     return this.http.get<ArtistList>(`${this.ENDPOINT}`, { headers: this.headers, params });
   }
 

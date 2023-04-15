@@ -1,3 +1,27 @@
-<h1>list works!</h1>
+<h1>
+  <span>list works!</span>
+
+  <button class="btn btn-primary" *ngIf="isAdmin" routerLink="new">Añadir artista</button>
+</h1>
 <hr>
-<button class="btn btn-primary" *ngIf="isAdmin" routerLink="new">Añadir artista</button>
+<div class="progress indeterminate" *ngIf="!listData.docs; else list">
+  <div class="progress-bar progress-bar-striped"></div>
+</div>
+
+<ng-template #list>
+  <section *ngIf="listData.docs">
+    <nav>
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="!listData.hasPrevPage">
+          <span class="page-link" [routerLink]="['.']" [queryParams]="{ page: listData.page - 1 }"><i class="material-icons">navigate_before</i></span>
+        </li>
+        <li class="page-item" *ngFor="let page of pages" [class.active]="listData.page === page">
+          <a class="page-link" [routerLink]="['.']" [queryParams]="{ page }">{{ page }}</a>
+        </li>
+        <li class="page-item" [class.disabled]="!listData.hasNextPage">
+          <a class="page-link" [routerLink]="['.']" [queryParams]="{ page: listData.page + 1 }"><i class="material-icons">navigate_next</i></a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</ng-template>

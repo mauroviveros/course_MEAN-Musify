@@ -9,3 +9,13 @@ body{
   flex-direction: column;
   padding: 0 !important;
 }
+
+router-outlet + *{
+  h1{
+    display: flex;
+    margin: 1rem;
+
+    *:first-child{ flex: 1; }
+  }
+  hr{ margin: 0; }
+}
