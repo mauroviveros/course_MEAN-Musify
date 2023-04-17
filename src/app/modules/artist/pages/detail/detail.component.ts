@@ -39,4 +39,8 @@ export class DetailComponent {
       this.router.navigate(["/artist"]);
     });
   }
+
+  public edit(){
+    this.router.navigate(["artist", this.artist?._id, "update"]);
+  }
 }

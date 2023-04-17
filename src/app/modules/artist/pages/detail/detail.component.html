@@ -3,8 +3,9 @@
   <section>
     <h1>{{ artist?.name }}</h1>
     <p>{{ artist?.description }}</p>
-    <button class="btn btn-secondary me-1">Añadir album</button>
-    <button class="btn btn-danger" (click)="remove()">Borrar artista</button>
+    <button class="btn btn-success me-1">Añadir album</button>
+    <button class="btn btn-danger me-1" (click)="remove()">Borrar artista</button>
+    <button class="btn btn-secondary" (click)="edit()">Editar artista</button>
   </section>
 </header>
 <hr>
