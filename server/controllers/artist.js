@@ -18,11 +18,13 @@ async function getArtist(req, res){
 };
 
 async function getArtists(req, res){
-  const page  = req.query.page  || 1;
-  const limit = req.query.limit || 10;
+  const paginationConfig = {};
+  if(!!req.query.page) paginationConfig.page = req.query.page;
+  if(!!req.query.limit) paginationConfig.limit = req.query.limit;
+
 
   try {
-    const artistsDB = await Artist.paginate({}, { page, limit });
+    const artistsDB = await Artist.paginate({}, paginationConfig);
     return res.json(artistsDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el listado de artistas", error: { message: error.message } });

@@ -29,10 +29,10 @@ export class ArtistService {
     return `${this.ENDPOINT}/${_id}/image`;
   }
 
-  getList(page: number){
-    const params = new HttpParams()
-      .set("page", page)
-      .set("limit", this.limit);
+  getList(page: number = 1, all?: boolean){
+    let params = new HttpParams().set("page", page);
+    if(!all) params = params.set("limit", this.limit);
+
     return this.http.get<ArtistList>(`${this.ENDPOINT}`, { headers: this.headers, params });
   }
 

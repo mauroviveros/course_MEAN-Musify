@@ -15,12 +15,8 @@ export class ValidarTokenGuard{
 
   private _validarToken(){
     return of(localStorage.getItem("token")).pipe(
-      map(token => {
-        return !token ? this.router.parseUrl("/auth/login") : token;
-      }),
-      switchMap(response => {
-        return typeof response === "string" ? this.auth.getUser() : of(response)
-      }),
+      map(token => !token ? this.router.parseUrl("/auth/login") : token),
+      switchMap(response => typeof response === "string" ? this.auth.getUser() : of(response)),
       map(valid => valid === true ? true : this.router.parseUrl("/auth/login"))
     );
   }

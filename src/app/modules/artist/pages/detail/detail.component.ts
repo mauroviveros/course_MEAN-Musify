@@ -43,4 +43,8 @@ export class DetailComponent {
   public edit(){
     this.router.navigate(["artist", this.artist?._id, "update"]);
   }
+
+  public createAlbum(){
+    this.router.navigate(["album", "create"], { queryParams: { artist: this.artist?._id } });
+  }
 }

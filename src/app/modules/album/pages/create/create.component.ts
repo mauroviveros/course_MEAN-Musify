@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
-import { AlbumRequest } from '../../album.interface';
+import { ArtistService } from 'src/app/modules/artist/artist.service';
+
+import { Album, AlbumRequest } from '../../album.interface';
+import { Artist } from 'src/app/modules/artist/artist.interface';
+import { finalize, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'album-create',
@@ -10,14 +14,17 @@ import { AlbumRequest } from '../../album.interface';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent {
+  artist?: string;
   constructor(
-    private router: Router,
-    // private artistService: ArtistService
-  ){}
+    private route: ActivatedRoute
+  ){
+    this.route.queryParams.subscribe(({ artist }) => this.artist = artist);
+  }
 
   public submitData(data: AlbumRequest){
     Swal.fire("creando Album", undefined, "info");
     Swal.showLoading();
+    console.log(data);
     // this.artistService.add(data as ArtistRequest).subscribe(response => {
     //   if(typeof response === "string") return Swal.fire("creando Artista", response, "error");
     //   Swal.fire("creando Artista", "Artista creado correctamente", "success");

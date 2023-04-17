@@ -2,5 +2,5 @@
 <hr>
 
 <div class="row">
-  <album-form class="col-10" (submitted)="submitData($event)" actionText="Crear Album"></album-form>
+  <album-form class="col-10" [artist]="artist" (submitted)="submitData($event)" actionText="Crear Album"></album-form>
 </div>
