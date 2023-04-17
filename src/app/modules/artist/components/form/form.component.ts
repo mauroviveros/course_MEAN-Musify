@@ -4,8 +4,7 @@ import { Artist, ArtistRequest } from '../../artist.interface';
 
 @Component({
   selector: 'artist-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  templateUrl: './form.component.html'
 })
 export class FormComponent {
   @Input() public artist?: Artist;
