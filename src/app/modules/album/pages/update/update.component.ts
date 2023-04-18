@@ -45,7 +45,8 @@ export class UpdateComponent {
     Swal.showLoading();
     this.albumService.update(this.album._id, data as AlbumRequest).subscribe(response => {
       if(typeof response === "string") return Swal.fire("actualizando Album", response, "error");
-      return Swal.fire("actualizando Album", "Album actualizado correctamente", "success");
+      Swal.fire("actualizando Album", "Album actualizado correctamente", "success");
+      return this.router.navigate(["/artist", response.artist]);
     })
   }
 

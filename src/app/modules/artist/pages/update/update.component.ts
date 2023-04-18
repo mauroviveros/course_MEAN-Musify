@@ -45,7 +45,8 @@ export class UpdateComponent {
     Swal.showLoading();
     this.artistService.update(this.artist._id, data as ArtistRequest).subscribe(response => {
       if(typeof response === "string") return Swal.fire("actualizando Artista", response, "error");
-      return Swal.fire("actualizando Artista", "Artista actualizado correctamente", "success");
+      Swal.fire("actualizando Artista", "Artista actualizado correctamente", "success");
+      return this.router.navigate(["/artist", response._id]);
     })
   }
 

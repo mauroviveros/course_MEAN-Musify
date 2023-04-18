@@ -28,7 +28,7 @@ export class CreateComponent {
     this.albumService.add(data).subscribe(response => {
       if(typeof response === "string") return Swal.fire("creando Album", response, "error");
       Swal.fire("creando Album", "Album creado correctamente.", "success");
-      return this.router.navigate(["/album"]);
+      return this.router.navigate(["/album/" + response._id + "/update"]);
     })
   }
 }
