@@ -1,0 +1,11 @@
+<div class="progress indeterminate" *ngIf="!listData.docs; else list">
+  <div class="progress-bar progress-bar-striped"></div>
+</div>
+
+<ng-template #list>
+  <section *ngIf="listData.docs">
+    <article>
+      <album-card *ngFor="let album of listData.docs" [album]="album" (onDeleted)="onDeleted($event)"></album-card>
+    </article>
+  </section>
+</ng-template>

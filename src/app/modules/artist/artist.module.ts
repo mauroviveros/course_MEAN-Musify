@@ -11,6 +11,7 @@ import { FormComponent } from './components/form/form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CardComponent } from './components/card/card.component';
 import { UpdateComponent } from './pages/update/update.component';
+import { AlbumModule } from '../album/album.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UpdateComponent } from './pages/update/update.component';
     CommonModule,
     ReactiveFormsModule,
     ArtistRoutingModule,
-    SharedModule
+    SharedModule,
+    AlbumModule
   ]
 })
 export class ArtistModule { }
