@@ -20,13 +20,18 @@ async function getAlbum(req, res){
 };
 
 async function getAlbums(req, res){
-  const page  = req.query.page  || 1;
-  const limit = req.query.limit || 10;
+  const paginationConfig = { populate };
+  const paginationQuery = {};
+  if(!!req.query.page) paginationConfig.page = req.query.page;
+  if(!!req.query.limit) paginationConfig.limit = req.query.limit;
+  if(!!req.query.artist) paginationQuery.artist = req.query.artist;
+
 
   try {
-    const albumsDB = await Album.paginate({}, { page, limit, populate });
+    const albumsDB = await Album.paginate(paginationQuery, paginationConfig);
     return res.json(albumsDB);
   } catch (error) {
+    console.log(error);
     return res.status(400).json({ message: "Error al obtener el listado de albumes", error: { message: error.message } });
   };
 };

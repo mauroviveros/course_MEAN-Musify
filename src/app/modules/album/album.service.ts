@@ -27,8 +27,8 @@ export class AlbumService {
     return `${this.ENDPOINT}/${_id}/image`;
   }
 
-  getList(page: number = 1, all?: boolean){
-    let params = new HttpParams().set("page", page);
+  getList(artist: string, page: number = 1, all?: boolean){
+    let params = new HttpParams().set("artist", artist).set("page", page);
     if(!all) params = params.set("limit", this.limit);
 
     return this.http.get<AlbumList>(`${this.ENDPOINT}`, { headers: this.headers, params });
