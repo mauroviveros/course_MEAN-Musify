@@ -1,3 +1,25 @@
+# [0.5.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.4.0...v0.5.0) (2023-04-18)
+
+
+### Features
+
+* :bento: add logos ([9b0dc9c](https://github.com/maurodviveros/course_MEAN-Musify/commit/9b0dc9c426374e35c6d94754488c2bd4386b9c35))
+* **course:** :white_check_mark: 100. Proceso de crear album ([6503e8b](https://github.com/maurodviveros/course_MEAN-Musify/commit/6503e8b2b7d0126dd72ff31620f2c48da9276eaa))
+* **course:** :white_check_mark: 101. Peticón Get albums ([4a6a16e](https://github.com/maurodviveros/course_MEAN-Musify/commit/4a6a16eb037092d2dbc67686194e914e51558104))
+* **course:** :white_check_mark: 102. Listado y maquetación de albums ([9e9d171](https://github.com/maurodviveros/course_MEAN-Musify/commit/9e9d1714fa256d2ddc065305508bd4d60bf39097))
+* **course:** :white_check_mark: 103. Mejorando la edición del artista ([27d3780](https://github.com/maurodviveros/course_MEAN-Musify/commit/27d37801fc246c26c497a7032659fcd591195a4b))
+* **course:** :white_check_mark: 104. Eliminar un album ([44c7e31](https://github.com/maurodviveros/course_MEAN-Musify/commit/44c7e31e3d51a63c31d909b49f9cdb5637ce6f46))
+* **course:** :white_check_mark: 105. Componente para el detalle del album ([75c4a39](https://github.com/maurodviveros/course_MEAN-Musify/commit/75c4a3995f801060ffcada6429a9b2d7a7a3fdcc))
+* **course:** :white_check_mark: 105. Componente para el detalle del album ([d5ce548](https://github.com/maurodviveros/course_MEAN-Musify/commit/d5ce548e99526c14fe7da1b815427c591bf9d21f))
+* **course:** :white_check_mark: 94. Eliminar artista ([4982c5a](https://github.com/maurodviveros/course_MEAN-Musify/commit/4982c5ac1b3d4725e59c5cd06e9199fcfd9e7b94))
+* **course:** :white_check_mark: 95. Componente para crear albums ([9c5be71](https://github.com/maurodviveros/course_MEAN-Musify/commit/9c5be71de272f8eea786a737a24d5a002b0fb2f8))
+* **course:** :white_check_mark: 96. Formulario de creación de albums ([0d19323](https://github.com/maurodviveros/course_MEAN-Musify/commit/0d19323b963f7a16f0857a72f14382d49b9d012a))
+* **course:** :white_check_mark: 97. Guardar un nuevo album ([e851ac8](https://github.com/maurodviveros/course_MEAN-Musify/commit/e851ac884c8c696ab1565b71bbd5aa3c5ee63c63))
+* **course:** :white_check_mark: 98. Componente para editar albums ([58c3116](https://github.com/maurodviveros/course_MEAN-Musify/commit/58c31169d0c60d10b9c3fdeb478184fda48e0c69))
+* **course:** :white_check_mark: 99. Editar el album ([1e8a40d](https://github.com/maurodviveros/course_MEAN-Musify/commit/1e8a40d195e8e646c846df6e123a0d4f21b88789))
+
+
+
 # [0.4.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.3.1...v0.4.0) (2023-04-15)
 
 
