@@ -4,7 +4,7 @@ import { ArtistService } from '../../artist.service';
 import { Artist, ArtistRequest } from '../../artist.interface';
 import Swal from 'sweetalert2';
 import { AuthService } from 'src/app/modules/auth/auth.service';
-import { filter, of, switchMap, tap } from 'rxjs';
+import { filter, finalize, of, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'artist-update',
@@ -27,11 +27,16 @@ export class UpdateComponent {
       tap(role => !role ? Swal.fire("obteniendo Artista", "no tienes permisos para ver este artista", "error") : null ),
       tap(role => !role ? this.router.navigate([""]) : null ),
       filter(role => role),
-      switchMap(() => this.artistService.get(this.route.snapshot.paramMap.get("_id") as string))
-    ).subscribe(response => {
-      Swal.close();
-      this.artist = response;
+      switchMap(() => this.artistService.get(this.route.snapshot.paramMap.get("_id") as string)),
+      finalize(() => Swal.close())
+    ).subscribe({
+      next: (artist) => this.artist = artist,
+      error: () => this.router.navigate(["/artist"])
     });
+  }
+
+  getIMG(){
+    return () => this.artist ? this.artistService.getImg(this.artist._id): null;
   }
 
   public submitData(data: ArtistRequest){

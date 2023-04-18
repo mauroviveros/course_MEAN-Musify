@@ -11,13 +11,14 @@ import { AuthService } from 'src/app/modules/auth/auth.service';
 export class UpdateImgComponent {
   @ViewChild("inputFile") inputFile: ElementRef = {} as ElementRef;
   @Input() public text?: string;
-  @Input() public artist?: Artist;
+  @Input() public ID?: string;
   @Output() submitted = new EventEmitter<File>();
+  @Input() getIMG?: () => string | null;
   public file?: File;
   public imageSrc?: string;
 
   public get imgProfileURL (){
-    return this.imageSrc || (this.artist?._id ? this.artistService.getImg(this.artist._id) : null);
+    return this.imageSrc || (this.getIMG ? this.getIMG() : null);
   }
 
   constructor(

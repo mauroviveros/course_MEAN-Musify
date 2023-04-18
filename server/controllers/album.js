@@ -12,7 +12,7 @@ const populate = {
 
 async function getAlbum(req, res){
   try {
-    const albumDB = await Album.findById(req.params._id).populate(populate).exec();
+    const albumDB = await Album.findById(req.params._id).exec();
     return res.json(albumDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el detalle del album", error: { message: error.message } });
@@ -88,10 +88,10 @@ async function getImage(req, res){
   try{
     const albumDB = await Album.findById(req.params._id);
     if(!albumDB) throw new Error("No existe el album");
-    const path_file = `./uploads/albums/${albumDB.image}`;
+    let path_file = `./uploads/albums/${albumDB.image}`;
     const imageBool = await fs.existsSync(path_file);
 
-    if(!imageBool) throw new Error("No existe la imagen");
+    if(!imageBool) path_file = "./uploads/albums/empty.png";
 
     res.sendFile(path.resolve(path_file));
   } catch(error){

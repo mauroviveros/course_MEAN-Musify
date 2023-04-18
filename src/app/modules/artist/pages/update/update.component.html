@@ -2,6 +2,6 @@
 <hr>
 
 <div class="row" *ngIf="artist">
-    <shared-update-img class="col-4" [artist]="artist"  (submitted)="submitIMG($event)" text="Foto del Artista"></shared-update-img>
+    <shared-update-img class="col-4" [getIMG]="getIMG()" (submitted)="submitIMG($event)" text="Foto del Artista"></shared-update-img>
     <artist-form class="col-6" [artist]="artist" (submitted)="submitData($event)" actionText="Actualizar Artista"></artist-form>
 </div>

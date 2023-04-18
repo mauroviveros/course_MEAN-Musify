@@ -22,7 +22,7 @@ export class CreateComponent {
     this.artistService.add(data as ArtistRequest).subscribe(response => {
       if(typeof response === "string") return Swal.fire("creando Artista", response, "error");
       Swal.fire("creando Artista", "Artista creado correctamente", "success");
-      return this.router.navigate(["artist", response._id]);
+      return this.router.navigate(["artist", response._id, "update"]);
     })
   }
 }
