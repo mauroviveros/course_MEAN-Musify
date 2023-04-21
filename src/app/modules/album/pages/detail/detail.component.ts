@@ -32,4 +32,19 @@ export class DetailComponent {
       error: () => { this.router.navigate(["/"]); }
     });
   }
+
+  public remove(){
+    if(!this.album) return;
+    this.albumService.remove(this.album).subscribe(() => {
+      this.router.navigate(["artist", this.album?.artist]);
+    });
+  }
+
+  public edit(){
+    this.router.navigate(["album", this.album?._id, "update"]);
+  }
+
+  public createSong(){
+    this.router.navigate(["song", "create"], { queryParams: { album: this.album?._id } });
+  }
 }
