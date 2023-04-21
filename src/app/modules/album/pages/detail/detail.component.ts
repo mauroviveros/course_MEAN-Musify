@@ -45,6 +45,6 @@ export class DetailComponent {
   }
 
   public createSong(){
-    this.router.navigate(["song", "create"], { queryParams: { album: this.album?._id } });
+    this.router.navigate(["song", "create"], { queryParams: { album: this.album?._id, artist: this.album?.artist } });
   }
 }

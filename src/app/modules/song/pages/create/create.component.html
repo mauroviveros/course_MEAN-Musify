@@ -1,1 +1,6 @@
-<p>create works!</p>
+<h1>Crear nueva Canción</h1>
+<hr>
+
+<div class="row" *ngIf="artist">
+  <song-form class="col-10" [song]="song" (submitted)="submitData($event)" actionText="Crear canción" [artist]="artist" [album]="album"></song-form>
+</div>
