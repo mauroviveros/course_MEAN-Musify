@@ -6,7 +6,10 @@ const fs    = require("fs");
 const Song  = require("../models/song");
 
 const populate = {
-  path: "album"
+  path: "album",
+  populate: {
+    path: "artist"
+  }
 };
 
 async function getSong(req, res){
@@ -27,6 +30,13 @@ async function getSongs(req, res){
 
   try {
     const songsDB = await Song.paginate(paginationQuery, paginationConfig);
+
+    songsDB.docs = songsDB.docs.map(song => {
+      song.albumName = song.album.name;
+      song.artistName = song.album.artist.name;
+      song.album = song.album._id;
+      return song;
+    });
     return res.json(songsDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el listado de canciones", error: { message: error.message } });

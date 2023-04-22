@@ -6,7 +6,9 @@ export interface Song{
   number    : number,
   duration  : number,
   album     : string,
-  file?     : string
+  file?     : string,
+  artistName: string,
+  albumName : string
 }
 
 

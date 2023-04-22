@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Song } from '../../song.interface';
 import { SongService } from '../../song.service';
 import { map } from 'rxjs';
+import { PlayerService } from 'src/app/shared/services/player.service';
 
 @Component({
   selector: 'song-list',
@@ -13,6 +14,7 @@ export class ListComponent {
   songs: Song[] = [];
 
   constructor(
+    private player: PlayerService,
     private songService: SongService
   ){}
 
@@ -27,6 +29,10 @@ export class ListComponent {
     ).subscribe(({ docs }) => {
       this.songs = docs;
     })
+  }
+
+  play(song: Song){
+    this.player.play(song);
   }
 
   remove(song: Song){

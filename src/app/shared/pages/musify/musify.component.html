@@ -1,5 +1,5 @@
 <shared-sidebar></shared-sidebar>
 <main class="container-fluid">
   <router-outlet></router-outlet>
-  <shared-player></shared-player>
+  <shared-player *ngIf="song" [song]="song"></shared-player>
 </main>

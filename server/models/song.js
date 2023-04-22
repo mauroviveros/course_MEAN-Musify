@@ -10,7 +10,9 @@ const SongSchema = mongoose.Schema({
   number: { type: Number, required: [true, "Rellena todos los campos"]},
   duration: { type: String, required: [true, "Rellena todos los campos"]},
   file: { type: String },
-  album: { type: mongoose.Schema.ObjectId, ref: "Album", required: [true, "Ingrese un album Valido"] }
+  album: { type: mongoose.Schema.ObjectId, ref: "Album", required: [true, "Ingrese un album Valido"] },
+  albumName: { type: String },
+  artistName: { type: String },
 });
 
 SongSchema.pre('save', async function(next) {

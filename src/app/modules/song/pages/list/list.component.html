@@ -1,6 +1,6 @@
 <ul class="list-group">
   <li class="list-group-item d-flex gap-3 align-items-center" *ngFor="let song of songs">
-    <button class="btn btn-success d-flex">
+    <button class="btn btn-success d-flex" (click)="play(song)">
       <i class="material-icons">play_arrow</i>
     </button>
     <span>{{ song.number }} - {{ song.name }} - {{ song.duration }}</span>
