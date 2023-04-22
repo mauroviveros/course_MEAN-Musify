@@ -1,0 +1,13 @@
+<ul class="list-group">
+  <li class="list-group-item d-flex gap-3 align-items-center" *ngFor="let song of songs">
+    <button class="btn btn-success d-flex">
+      <i class="material-icons">play_arrow</i>
+    </button>
+    <span>{{ song.number }} - {{ song.name }} - {{ song.duration }}</span>
+
+    <div class="d-flex flex-grow-1 justify-content-end gap-2">
+      <a class="btn btn-warning" [routerLink]="['/song', song._id, 'update' ]">EDITAR</a>
+      <button class="btn btn-danger" (click)="remove(song)">BORRAR</button>
+    </div>
+  </li>
+</ul>

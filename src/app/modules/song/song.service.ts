@@ -1,7 +1,7 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, filter, from, map, of, switchMap, tap } from 'rxjs';
-import { Song, SongRequest, SongResponse } from './song.interface';
+import { Song, SongList, SongRequest, SongResponse } from './song.interface';
 import { environment } from 'src/environments/environment';
 import { Album } from '../album/album.interface';
 import Swal from 'sweetalert2';
@@ -26,6 +26,13 @@ export class SongService {
 
   getFile(_id: string){
     return `${this.ENDPOINT}/${_id}/file`;
+  }
+
+  getList(album: string, page: number = 1, all?: boolean){
+    let params = new HttpParams().set("album", album).set("page", page);
+    if(!all) params = params.set("limit", this.limit);
+
+    return this.http.get<SongList>(`${this.ENDPOINT}`, { headers: this.headers, params });
   }
 
   get(_id: string){

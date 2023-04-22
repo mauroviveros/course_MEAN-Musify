@@ -3,7 +3,7 @@ import { Album } from "../album/album.interface"
 export interface Song{
   _id       : string,
   name      : string,
-  number    : string,
+  number    : number,
   duration  : number,
   album     : string,
   file?     : string
@@ -12,7 +12,7 @@ export interface Song{
 
 export interface SongRequest{
   name      : string,
-  number    : string,
+  number    : number,
   duration  : number,
   album     : string,
   file?     : string
@@ -21,7 +21,7 @@ export interface SongRequest{
 export interface SongResponse{
   _id       : string,
   name      : string,
-  number    : string,
+  number    : number,
   duration  : number,
   album     : Album,
   file?     : string

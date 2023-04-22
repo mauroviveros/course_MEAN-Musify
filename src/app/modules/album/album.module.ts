@@ -10,6 +10,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ListComponent } from './pages/list/list.component';
 import { CardComponent } from './components/card/card.component';
 import { DetailComponent } from './pages/detail/detail.component';
+import { SongModule } from '../song/song.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DetailComponent } from './pages/detail/detail.component';
     CommonModule,
     ReactiveFormsModule,
     AlbumRoutingModule,
-    SharedModule
+    SharedModule,
+    SongModule
   ],
   exports: [
     ListComponent

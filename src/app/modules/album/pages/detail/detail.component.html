@@ -9,5 +9,5 @@
   </section>
 </header>
 <hr>
-
-<album-list></album-list>
+<br>
+<song-list [album]="album._id" *ngIf="album"></song-list>
