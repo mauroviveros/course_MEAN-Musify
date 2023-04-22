@@ -6,9 +6,10 @@
   main{
     display: flex;
     flex-direction: column;
+    padding: 0;
   };
 };
 
 :host ::ng-deep{
-  router-outlet + *{ flex: 1; }
+  router-outlet + *{ flex: 1; padding: 0 2rem; }
 };

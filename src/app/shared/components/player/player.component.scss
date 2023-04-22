@@ -1,0 +1,29 @@
+:host{
+  background-color: #1C1C1F;
+  display: flex;
+  padding: 2rem;
+  color: #FFF;
+  gap: 1rem;
+
+
+  p{
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+  }
+  span{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  audio{
+    width: 100%;
+  }
+
+  img{
+    width: 10rem;
+    height: 10rem;
+  }
+}
