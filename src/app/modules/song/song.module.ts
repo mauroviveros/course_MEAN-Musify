@@ -5,12 +5,14 @@ import { SongRoutingModule } from './song.routing';
 import { CreateComponent } from './pages/create/create.component';
 import { FormComponent } from './components/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateComponent } from './pages/update/update.component';
 
 
 @NgModule({
   declarations: [
     CreateComponent,
-    FormComponent
+    FormComponent,
+    UpdateComponent
   ],
   imports: [
     CommonModule,

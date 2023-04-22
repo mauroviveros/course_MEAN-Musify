@@ -32,9 +32,7 @@ export class CreateComponent {
     this.songService.add(data).subscribe(response => {
       if(typeof response === "string") return Swal.fire("creando Canción", response, "error");
       Swal.fire("creando Canción", "Canción creada correctamente.", "success");
-
-      return
-      // return this.router.navigate(["/song/" + response._id + "/update"]);
+      return this.router.navigate(["/song/" + response._id + "/update"]);
     });
   }
 }

@@ -1,3 +1,5 @@
+import { Album } from "../album/album.interface"
+
 export interface Song{
   _id       : string,
   name      : string,
@@ -13,6 +15,15 @@ export interface SongRequest{
   number    : string,
   duration  : number,
   album     : string,
+  file?     : string
+}
+
+export interface SongResponse{
+  _id       : string,
+  name      : string,
+  number    : string,
+  duration  : number,
+  album     : Album,
   file?     : string
 }
 
