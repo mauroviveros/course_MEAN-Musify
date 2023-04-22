@@ -6,10 +6,7 @@ const fs    = require("fs");
 const Song  = require("../models/song");
 
 const populate = {
-  path: "album",
-  populate: {
-    path: "artist"
-  }
+  path: "album"
 };
 
 async function getSong(req, res){
