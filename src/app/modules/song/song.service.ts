@@ -1,9 +1,10 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, of } from 'rxjs';
+import { catchError, filter, from, map, of, switchMap, tap } from 'rxjs';
 import { Song, SongRequest, SongResponse } from './song.interface';
 import { environment } from 'src/environments/environment';
 import { Album } from '../album/album.interface';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,20 @@ export class SongService {
 
   add(body: SongRequest){
     return this.http.post<Song>(`${this.ENDPOINT}`, body, { headers: this.headers }).pipe(
+      catchError(this.catchError)
+    );
+  }
+
+  remove(song: Song){
+    return from(Swal.fire({
+      title: "Borrando Canción",
+      text: `Esta seguro que desea borrar la canción: ${song.name}?`,
+      icon: "question",
+      showCancelButton: true,
+    })).pipe(
+      filter(result => result.isConfirmed),
+      switchMap(() => this.http.delete<Song>(`${this.ENDPOINT}/${song._id}`, { headers: this.headers })),
+      tap(() => Swal.fire({ title: "Borrando Canción", text: `Canción: ${song.name}. Borrada correctamente`, icon: "success", })),
       catchError(this.catchError)
     );
   }
