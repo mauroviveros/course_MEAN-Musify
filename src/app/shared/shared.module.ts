@@ -4,12 +4,14 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MusifyComponent } from './pages/musify/musify.component';
 import { UpdateImgComponent } from './components/update-img/update-img.component';
+import { PlayerComponent } from './components/player/player.component';
 
 
 const components = [
   SidebarComponent,
   MusifyComponent,
-  UpdateImgComponent
+  UpdateImgComponent,
+  PlayerComponent
 ]
 
 @NgModule({
