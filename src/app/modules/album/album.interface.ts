@@ -4,6 +4,7 @@ export interface Album{
   name        : string,
   year        : number,
   artist      : string,
+  artistName? : string,
   image?      : string
 }
 

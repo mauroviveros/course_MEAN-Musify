@@ -19,11 +19,14 @@ async function getSong(req, res){
 };
 
 async function getSongs(req, res){
-  const page  = req.query.page  || 1;
-  const limit = req.query.limit || 10;
+  const paginationConfig = { populate };
+  const paginationQuery = {};
+  if(!!req.query.page) paginationConfig.page = req.query.page;
+  if(!!req.query.limit) paginationConfig.limit = req.query.limit;
+  if(!!req.query.album) paginationQuery.album = req.query.album;
 
   try {
-    const songsDB = await Song.paginate({}, { page, limit, populate });
+    const songsDB = await Song.paginate(paginationQuery, paginationConfig);
     return res.json(songsDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el listado de canciones", error: { message: error.message } });

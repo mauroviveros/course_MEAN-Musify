@@ -2,7 +2,7 @@
   <img [src]="img" class="card-img-top" [alt]="album?.name">
   <section>
     <h1>{{ album?.name }}</h1>
-    <p>{{ album?.artist }}</p>
+    <p>{{ album?.artistName }}</p>
     <p>{{ album?.year }}</p>
     <p>{{ album?.description }}</p>
     <button class="btn btn-success me-1" (click)="createSong()">Añadir Canción</button>

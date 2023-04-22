@@ -10,7 +10,8 @@ const AlbumSchema = mongoose.Schema({
   description: { type: String, required: [true, "Rellena todos los campos"]},
   year: { type: Number, required: [true, "Rellena todos los campos"]},
   image: { type: String },
-  artist: { type: mongoose.Schema.ObjectId, ref: "Artist", required: [true, "Ingrese un artista Valido"]}
+  artist: { type: mongoose.Schema.ObjectId, ref: "Artist", required: [true, "Ingrese un artista Valido"]},
+  artistName: { type: String }
 });
 
 AlbumSchema.pre('save', async function(next) {

@@ -12,7 +12,14 @@ const populate = {
 
 async function getAlbum(req, res){
   try {
-    const albumDB = await Album.findById(req.params._id).exec();
+    const albumDB = await Album.findById(req.params._id).populate(populate).exec();
+
+
+    albumDB.artistName = albumDB.artist.name;
+    albumDB.artist = albumDB.artist._id;
+
+    console.log(albumDB);
+
     return res.json(albumDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el detalle del album", error: { message: error.message } });
