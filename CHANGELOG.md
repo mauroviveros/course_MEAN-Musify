@@ -1,3 +1,19 @@
+## [1.0.1](https://github.com/maurodviveros/course_MEAN-Musify/compare/v1.0.0...v1.0.1) (2023-05-13)
+
+
+### Bug Fixes
+
+* :adhesive_bandage: fix routerLink profile ([31f6151](https://github.com/maurodviveros/course_MEAN-Musify/commit/31f6151c379db36a5845c10ece5c7295db2c6e6c))
+* :coffin: remove console.log ([29419a9](https://github.com/maurodviveros/course_MEAN-Musify/commit/29419a947ab637cb891ec964602c8f0ff8e4869d))
+
+
+### Features
+
+* :alien: add public path on express ([31adf2c](https://github.com/maurodviveros/course_MEAN-Musify/commit/31adf2c2e8ca5bdc377fd42edac0b764eed8aedb))
+* :monocle_face: add anchor to version app ([a2b6e40](https://github.com/maurodviveros/course_MEAN-Musify/commit/a2b6e40ab7e5057a41e9f2378ce9130a4bdd150a))
+
+
+
 # [1.0.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.5.0...v1.0.0) (2023-05-13)
 
 
