@@ -14,10 +14,14 @@ export class PlayerService {
     );
   }
 
-  constructor(){}
+  constructor(){
+    const song: Song = JSON.parse(window.localStorage.getItem("player") || "{}");
+    if(song._id) this._song.next(song);
+  }
 
 
   play(song: Song){
+    window.localStorage.setItem("player", JSON.stringify(song));
     this._song.next(song);
   }
 }
