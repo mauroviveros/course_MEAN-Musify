@@ -1,3 +1,26 @@
+# [1.0.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.5.0...v1.0.0) (2023-05-13)
+
+
+### Features
+
+* :sparkles: add btns in album detail ([3176ebb](https://github.com/maurodviveros/course_MEAN-Musify/commit/3176ebb0484e2f461c112160ae3ca5eb9bc8c8ce))
+* **course:** :white_check_mark: 107. Componente para añadir canciones ([f61e1e5](https://github.com/maurodviveros/course_MEAN-Musify/commit/f61e1e529e96d98134739aa941ca4eaf81576981))
+* **course:** :white_check_mark: 108. Formulario de crear canciones ([738751f](https://github.com/maurodviveros/course_MEAN-Musify/commit/738751f6ff0d052a09834b0e87b3783cadad1011))
+* **course:** :white_check_mark: 109. Guardar una canción ([6210852](https://github.com/maurodviveros/course_MEAN-Musify/commit/621085236f783a9171ddc305a6c3abf9c242b870))
+* **course:** :white_check_mark: 110. Editar canciones ([8efe4bd](https://github.com/maurodviveros/course_MEAN-Musify/commit/8efe4bdd24c6ff360d78538b0320814fac8362ee))
+* **course:** :white_check_mark: 110. Editar canciones ([48aaf71](https://github.com/maurodviveros/course_MEAN-Musify/commit/48aaf7135baceeece374c8247e4e30d50a19ec80))
+* **course:** :white_check_mark: 111. Proceso de creación de un tema ([a5608b5](https://github.com/maurodviveros/course_MEAN-Musify/commit/a5608b5c35210fae843a9465a87f248616e2199d))
+* **course:** :white_check_mark: 112. Terminar el servicio de canciones ([20b1108](https://github.com/maurodviveros/course_MEAN-Musify/commit/20b110882750033ab83870513b295738aa101be8))
+* **course:** :white_check_mark: 114. Estilos CSS para el listado de canciones ([5617fca](https://github.com/maurodviveros/course_MEAN-Musify/commit/5617fca72ed7b9c86729b640cac95966184b9f1b))
+* **course:** :white_check_mark: 114. Estilos CSS para el listado de canciones ([6ee6398](https://github.com/maurodviveros/course_MEAN-Musify/commit/6ee6398149efe8b414587b5c632d719c320472dc))
+* **course:** :white_check_mark: 116. Componente para el player ([24d3800](https://github.com/maurodviveros/course_MEAN-Musify/commit/24d3800d18c94c4cc657958a72a1aacf14722a4e))
+* **course:** :white_check_mark: 117. Estilos CSS del reproductor ([655805b](https://github.com/maurodviveros/course_MEAN-Musify/commit/655805bb3eedadf3718f6f7d27ad53ce560e3b8f))
+* **course:** :white_check_mark: 118. Mejoras estéticas ([93ee2e9](https://github.com/maurodviveros/course_MEAN-Musify/commit/93ee2e93bcf8fe3c7337283bc4df69511386c14a))
+* **course:** :white_check_mark: 119. Reproducir canciones ([9205386](https://github.com/maurodviveros/course_MEAN-Musify/commit/9205386e787df84f5703f521c64db4f21682fe37))
+* **course:** :white_check_mark: 120. Persistir el player ([911e3c4](https://github.com/maurodviveros/course_MEAN-Musify/commit/911e3c4d297c2f64d795c351774f6e01026d70ee))
+
+
+
 # [0.5.0](https://github.com/maurodviveros/course_MEAN-Musify/compare/v0.4.0...v0.5.0) (2023-04-18)
 
 
