@@ -18,8 +18,6 @@ async function getAlbum(req, res){
     albumDB.artistName = albumDB.artist.name;
     albumDB.artist = albumDB.artist._id;
 
-    console.log(albumDB);
-
     return res.json(albumDB);
   } catch (error) {
     return res.status(400).json({ message: "Error al obtener el detalle del album", error: { message: error.message } });
