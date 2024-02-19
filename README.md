@@ -39,7 +39,7 @@ MIT © [Mauro Daniel Viveros][github-profile]
 
 
 [udemy-link]: https://www.udemy.com/course/desarrollo-web-con-javascript-angular-nodejs-y-mongodb
-[github-profile]: https://github.com/maurodviveros
+[github-profile]: https://github.com/mauroviveros
 [nodejs]: https://nodejs.org
 [angularCLI]: https://angular.io
 [mongodb-badge]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
