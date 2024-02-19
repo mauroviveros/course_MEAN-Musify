@@ -1,7 +1,0 @@
-<h1>Editar Album</h1>
-<hr>
-
-<div class="row" *ngIf="album">
-    <shared-update-img class="col-4" [getIMG]="getIMG()" (submitted)="submitIMG($event)" text="Foto del Album"></shared-update-img>
-    <album-form class="col-6" [album]="album" [artist]="album.artist" (submitted)="submitData($event)" actionText="Actualizar Album"></album-form>
-</div>
