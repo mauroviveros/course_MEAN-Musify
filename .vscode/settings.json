@@ -20,6 +20,7 @@
   },
   "peacock.color": "#EC5252",
   "conventionalCommits.scopes": [
-    "frontend"
+    "frontend",
+    "frontend.auth"
   ]
 }
