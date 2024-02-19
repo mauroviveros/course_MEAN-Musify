@@ -19,9 +19,14 @@
     "titleBar.inactiveForeground": "#15202b99"
   },
   "peacock.color": "#EC5252",
+
   "conventionalCommits.scopes": [
     "frontend",
     "frontend.auth",
     "frontend.shared"
-  ]
+  ],
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
 }
