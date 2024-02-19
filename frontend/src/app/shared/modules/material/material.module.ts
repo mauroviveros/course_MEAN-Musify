@@ -4,4 +4,4 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({})
-export class MaterialModule { }
+export class MaterialModule {}
