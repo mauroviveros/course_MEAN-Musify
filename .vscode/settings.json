@@ -21,6 +21,7 @@
   "peacock.color": "#EC5252",
   "conventionalCommits.scopes": [
     "frontend",
-    "frontend.auth"
+    "frontend.auth",
+    "frontend.shared"
   ]
 }
