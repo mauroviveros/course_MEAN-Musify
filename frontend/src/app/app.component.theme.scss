@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin color($config){
+  $primary: map.get($config, primary);
+
+  auth-wrapper:before{
+    background-color: mat.get-color-from-palette($primary, 500) !important;
+  }
+}
+
+@mixin theme($theme){
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null { @include color($color-config); }
+}
+
+@mixin all-component-themes($theme){
+  @include theme($theme);
+}

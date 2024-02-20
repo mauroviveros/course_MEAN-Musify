@@ -1,0 +1,11 @@
+@use "@angular/material" as mat;
+@use "app/app.component.theme.scss" as app;
+
+@import "theme";
+
+
+@include mat.core();
+// @include mat.typography-hierarchy($musify-theme);
+@include mat.typography-hierarchy(mat.define-typography-config());
+@include mat.all-component-themes($musify-theme);
+@include app.all-component-themes($musify-theme);
