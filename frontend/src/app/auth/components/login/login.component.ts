@@ -4,7 +4,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'auth-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   private readonly fb = inject(FormBuilder);
