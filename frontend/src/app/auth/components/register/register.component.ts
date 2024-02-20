@@ -1,8 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'auth-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss',
 })
-export class RegisterComponent {}
+export class RegisterComponent {
+  private readonly fb = inject(FormBuilder);
+
+  readonly form = this.fb.group({
+    name: ['', [Validators.required]],
+    surname: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
+  });
+}
