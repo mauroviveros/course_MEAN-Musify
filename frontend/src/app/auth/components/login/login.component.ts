@@ -12,4 +12,10 @@ export class LoginComponent {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
   });
+
+  submit() {
+    if (this.form.invalid) return;
+
+    // console.log(this.form.value);
+  }
 }

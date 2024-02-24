@@ -12,6 +12,12 @@ export class RegisterComponent {
     name: ['', [Validators.required]],
     surname: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
   });
+
+  submit() {
+    if (this.form.invalid) return;
+
+    // console.log(this.form.value);
+  }
 }
