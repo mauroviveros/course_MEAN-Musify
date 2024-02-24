@@ -2,6 +2,9 @@
   <mat-form-field>
     <mat-label>Nombre</mat-label>
     <mat-icon color="primary" matIconPrefix>face</mat-icon>
+    <mat-hint align="end">
+      {{ form.controls.name.value?.length | counter: MAX_LENGTH }}
+    </mat-hint>
     <mat-error>{{ form.controls.name.errors | error }}</mat-error>
     <input
       type="text"
@@ -14,6 +17,9 @@
   <mat-form-field>
     <mat-label>Apellido</mat-label>
     <mat-icon color="primary" matIconPrefix>badge</mat-icon>
+    <mat-hint align="end">
+      {{ form.controls.surname.value?.length | counter: MAX_LENGTH }}
+    </mat-hint>
     <mat-error>{{ form.controls.surname.errors | error }}</mat-error>
     <input
       type="text"
