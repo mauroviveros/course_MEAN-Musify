@@ -5,9 +5,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material/material.module';
 
 import { ErrorPipe } from './pipes/error.pipe';
+import { CounterPipe } from './pipes/counter.pipe';
 
 @NgModule({
-  imports: [ErrorPipe],
-  exports: [CommonModule, ReactiveFormsModule, MaterialModule, ErrorPipe],
+  imports: [CounterPipe, ErrorPipe],
+  exports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    CounterPipe,
+    ErrorPipe,
+  ],
 })
 export class SharedModule {}
