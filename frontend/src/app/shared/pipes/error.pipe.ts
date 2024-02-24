@@ -4,8 +4,8 @@ import { ValidationErrors } from '@angular/forms';
 const messages: { [key: string]: string } = {
   required: 'El campo es obligatorio',
   email: 'No es un email valido',
-  minlength: 'Debe contener al menos {{ requiredLength }} caracteres',
-  confirmPassword: 'Las contraseñas no coinciden',
+  minlength: 'Longitud mínima: {{ requiredLength }} caracteres',
+  maxlength: 'Máximo permitido: {{ requiredLength }} caracteres',
 };
 
 @Pipe({
