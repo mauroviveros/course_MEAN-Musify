@@ -1,6 +1,7 @@
 :host{
   justify-content: center;
   align-items: center;
+  padding: 0 1rem;
   gap: 1rem;
 
   &:before{
@@ -24,10 +25,9 @@ header{
 }
 
 mat-card{
-  margin: 0 1rem;
   border-radius: 1rem;
   position: relative;
-  width: calc(100% - 2rem);
+  width: 100%;
   max-width: 25rem;
 
   mat-card-header{
@@ -44,6 +44,10 @@ footer{
     display: flex;
     flex-direction: column;
     padding: 1rem;
+
+    mat-checkbox{
+      margin: .25rem 0;
+    }
   }
   .mdc-text-field--filled:not(.mdc-text-field--disabled){
     background-color: transparent;
