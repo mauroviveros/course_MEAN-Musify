@@ -4,8 +4,12 @@
 @mixin color($config){
   $primary: map.get($config, primary);
 
-  auth-wrapper:before{
-    background-color: mat.get-color-from-palette($primary, 500) !important;
+  auth-wrapper{
+    background-color: mat.get-color-from-palette($primary, 100);
+
+    &:before{
+      background-color: mat.get-color-from-palette($primary, 500);
+    }
   }
 }
 
