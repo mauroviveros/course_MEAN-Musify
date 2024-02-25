@@ -1,6 +1,6 @@
 <form [formGroup]="form" (submit)="submit()">
   <mat-form-field appearance="outline">
-    <mat-label>Email</mat-label>
+    <mat-label>Correo electrónico</mat-label>
     <mat-icon color="primary" matIconPrefix>email</mat-icon>
     <mat-error>{{ form.controls.email.errors | error }}</mat-error>
     <input
@@ -12,7 +12,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Password</mat-label>
+    <mat-label>Contraseña</mat-label>
     <mat-icon color="primary" matIconPrefix>password</mat-icon>
     <mat-error>{{ form.controls.password.errors | error }}</mat-error>
     <input

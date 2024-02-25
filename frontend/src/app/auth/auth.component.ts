@@ -9,4 +9,6 @@ import { AuthModule } from './auth.module';
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss',
 })
-export class AuthComponent {}
+export class AuthComponent {
+  isLoading = false;
+}

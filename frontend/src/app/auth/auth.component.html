@@ -4,15 +4,20 @@
 
 <mat-card>
   <mat-card-content>
+    @if (isLoading) {
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    }
+
     <mat-tab-group dynamicHeight>
-      <mat-tab label="Log In">
+      <mat-tab label="Iniciar sesión">
         <ng-template matTabContent>
-          <auth-login></auth-login>
+          <auth-login (loading)="isLoading = $event"></auth-login>
         </ng-template>
       </mat-tab>
-      <mat-tab label="Sign In">
+
+      <mat-tab label="Registro">
         <ng-template matTabContent>
-          <auth-register></auth-register>
+          <auth-register (loading)="isLoading = $event"></auth-register>
         </ng-template>
       </mat-tab>
     </mat-tab-group>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -6,6 +6,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   templateUrl: './register.component.html',
 })
 export class RegisterComponent {
+  @Output() loading = new EventEmitter<boolean>();
   private readonly fb = inject(FormBuilder);
   readonly MAX_LENGTH = 24;
 
@@ -18,6 +19,7 @@ export class RegisterComponent {
 
   submit() {
     if (this.form.invalid) return;
+    this.loading.emit(true);
 
     // console.log(this.form.value);
   }
