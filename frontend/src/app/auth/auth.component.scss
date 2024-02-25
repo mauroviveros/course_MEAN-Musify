@@ -17,7 +17,7 @@
 }
 
 header{
-  margin: 15vh 0 0;
+  margin: 12vh 0 0;
   width: 8rem;
   height: 8rem;
   z-index: 1;
@@ -29,10 +29,6 @@ mat-card{
   position: relative;
   width: 100%;
   max-width: 25rem;
-
-  mat-card-header{
-    justify-content: center;
-  }
 }
 
 footer{
@@ -44,12 +40,6 @@ footer{
     display: flex;
     flex-direction: column;
     padding: 1rem;
-
-    mat-checkbox{
-      margin: .25rem 0;
-    }
-  }
-  .mdc-text-field--filled:not(.mdc-text-field--disabled){
-    background-color: transparent;
+    gap: .25rem;
   }
 }

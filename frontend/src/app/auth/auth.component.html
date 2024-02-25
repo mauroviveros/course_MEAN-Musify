@@ -4,13 +4,16 @@
 
 <mat-card>
   <mat-card-content>
-    <!-- <mat-tab-group mat-stretch-tabs> -->
-    <mat-tab-group>
+    <mat-tab-group dynamicHeight>
       <mat-tab label="Log In">
-        <auth-login></auth-login>
+        <ng-template matTabContent>
+          <auth-login></auth-login>
+        </ng-template>
       </mat-tab>
       <mat-tab label="Sign In">
-        <auth-register></auth-register>
+        <ng-template matTabContent>
+          <auth-register></auth-register>
+        </ng-template>
       </mat-tab>
     </mat-tab-group>
   </mat-card-content>

@@ -1,5 +1,5 @@
 <form [formGroup]="form" (submit)="submit()">
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Nombre</mat-label>
     <mat-icon color="primary" matIconPrefix>face</mat-icon>
     <mat-hint align="end">
@@ -14,7 +14,7 @@
       matInput />
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Apellido</mat-label>
     <mat-icon color="primary" matIconPrefix>badge</mat-icon>
     <mat-hint align="end">
@@ -29,7 +29,7 @@
       matInput />
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
     <mat-icon color="primary" matIconPrefix>email</mat-icon>
     <mat-error>{{ form.controls.email.errors | error }}</mat-error>
@@ -41,7 +41,7 @@
       matInput />
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Password</mat-label>
     <mat-icon color="primary" matIconPrefix>password</mat-icon>
     <mat-error>{{ form.controls.password.errors | error }}</mat-error>
