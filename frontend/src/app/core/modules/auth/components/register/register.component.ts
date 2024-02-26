@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
-import { MessageService } from '../../../shared/services/message.service';
+import { MessageService } from '@shared/services/message.service';
 
 @Component({
   selector: 'auth-register',

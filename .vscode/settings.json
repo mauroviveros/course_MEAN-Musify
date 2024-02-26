@@ -22,7 +22,6 @@
 
   "conventionalCommits.scopes": [
     "frontend",
-    "frontend.auth",
     "frontend.shared"
   ],
 
