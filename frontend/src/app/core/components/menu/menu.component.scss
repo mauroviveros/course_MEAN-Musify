@@ -1,0 +1,33 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 50vw;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  img{ width: 100%; padding: 2rem; box-sizing: border-box;}
+}
+
+nav{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+h4{
+  margin: 0;
+}
+// mat-list-item{
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   padding: .5rem 0;
+
+//   mat-icon{
+//     margin: 0;
+//   }
+// }
