@@ -22,7 +22,8 @@
 
   "conventionalCommits.scopes": [
     "frontend",
-    "frontend.shared"
+    "frontend.shared",
+    "backend"
   ],
 
   "editor.codeActionsOnSave": {
