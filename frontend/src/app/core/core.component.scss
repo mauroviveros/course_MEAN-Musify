@@ -1,0 +1,13 @@
+@import "breakpoints";
+
+mat-drawer-container, mat-drawer{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@media #{$media-small-up}{
+  mat-drawer{
+    width: 10rem;
+  }
+}
