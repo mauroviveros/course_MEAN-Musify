@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { join } from 'path';
 
 import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     AuthModule,
+    UsersModule,
   ],
 })
 export class AppModule {}
