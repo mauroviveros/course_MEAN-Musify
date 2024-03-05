@@ -4,6 +4,14 @@
 @mixin color($config){
   $primary: map.get($config, primary);
 
+  // core-menu{
+  //   background-color: mat.get-color-from-palette($primary, 800);
+  //   color: mat.get-contrast-color-from-palette($primary, 800) !important;
+  //   span, mat-icon, h4{
+  //     color: mat.get-contrast-color-from-palette($primary, 800) !important;
+  //   }
+  // }
+
   auth-wrapper{
     background-color: mat.get-color-from-palette($primary, 100);
 
