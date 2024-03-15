@@ -13,8 +13,12 @@ export class AuthService {
   }
 
   async signUp(user: SignUpAuthDto): Promise<AuthResponseDto> {
-    const response = await this.userService.create(user as User);
-    console.log('response', response);
-    return { token: 'token' };
+    try {
+      const response = await this.userService.create(user as User);
+      console.log('response', response);
+      return { token: 'token' };
+    } catch (error) {
+      throw error;
+    }
   }
 }
