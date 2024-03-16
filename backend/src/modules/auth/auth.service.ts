@@ -7,19 +7,23 @@ import {
   SignInAuthDto,
   SignUpAuthDto,
 } from '@model/dto/auth.dto';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly userService: UserService) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly jwtService: JwtService,
+  ) {}
 
-  async signIn(user: SignInAuthDto): Promise<AuthResponseDto> {
-    console.log(user);
-    return { token: 'token' };
+  async signIn(body: SignInAuthDto): Promise<AuthResponseDto> {
+    const { _id, role } = await this.userService.findOne(body.email);
+    const token = await this.jwtService.signAsync({ sub: { _id, role } });
+    return { token };
   }
 
-  async signUp(user: SignUpAuthDto): Promise<AuthResponseDto> {
-    const response = await this.userService.create(user as User);
-    console.log('response', response);
-    return { token: 'token' };
+  async signUp(body: SignUpAuthDto): Promise<AuthResponseDto> {
+    const user = await this.userService.create(body as User);
+    return this.signIn(user);
   }
 }
