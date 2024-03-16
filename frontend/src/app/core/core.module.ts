@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '@shared/shared.module';
-import { AuthModule } from './modules/auth/auth.module';
+import { AuthModule } from './auth/auth.module';
 import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
