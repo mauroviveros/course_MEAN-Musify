@@ -1,13 +1,20 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { ObjectId } from 'mongoose';
+import { isEmail } from 'validator';
 
 enum Role {
   USER = 'USER',
   ADMIN = 'ADMIN',
 }
-
 @Schema()
 export class User {
-  @Prop({ required: true, unique: true })
+  _id: ObjectId;
+
+  @Prop({
+    required: true,
+    unique: true,
+    validate: { validator: isEmail, message: 'Invalid email format' },
+  })
   email: string;
 
   @Prop({ required: true })
