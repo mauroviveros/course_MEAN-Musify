@@ -11,9 +11,9 @@
     "outDir": "./dist",
     "baseUrl": "src",
     "paths": {
-      "@model/*": [
-        "common/models/*"
-      ]
+      "@model/*": [ "common/models/*" ],
+      "@filter/*": [ "common/filters/*" ],
+      "@guard/*": [ "common/guards/*" ]
     },
     "incremental": true,
     "skipLibCheck": true,
