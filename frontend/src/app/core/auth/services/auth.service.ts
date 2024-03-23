@@ -7,6 +7,7 @@ import {
   LoginRequestBody,
 } from '@shared/interfaces/auth.interface';
 import { Router } from '@angular/router';
+import { URL_API } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -14,12 +15,8 @@ import { Router } from '@angular/router';
 export class AuthService {
   private readonly http = inject(HttpClient);
   private readonly router = inject(Router);
-  private readonly URL_API = 'http://localhost:3000/api/auth';
+  private readonly URL_API = `${URL_API}/api/auth`;
   private readonly TOKEN_KEY = 'token';
-
-  constructor() {
-    console.log('auth');
-  }
 
   login(body: LoginRequestBody): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.URL_API}/login`, body).pipe(

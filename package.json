@@ -5,9 +5,15 @@
   "version": "1.0.1",
   "license": "MIT",
   "private": true,
-  "scripts": {},
-  "workspaces":[
+  "scripts": {
+    "start": "dotenv turbo start:dev"
+  },
+  "workspaces": [
     "frontend",
     "backend"
-  ]
+  ],
+  "devDependencies": {
+    "dotenv-cli": "^7.4.1",
+    "turbo": "^1.13.0"
+  }
 }
