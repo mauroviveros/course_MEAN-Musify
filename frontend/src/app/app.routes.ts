@@ -8,11 +8,13 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    title: 'Inicio',
     canActivate: [authGuard],
     component: CoreComponent,
   },
   {
     path: 'auth',
+    title: 'Autenticación',
     component: AuthComponent,
   },
 ];
