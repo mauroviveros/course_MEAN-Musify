@@ -1,18 +1,1 @@
-<mat-drawer-container>
-  <mat-drawer #drawer [mode]="mode()" [opened]="mode() === 'side'">
-    <core-menu></core-menu>
-  </mat-drawer>
-
-  <mat-drawer-content>
-    <mat-toolbar>
-      @if (mode() !== 'side') {
-        <button mat-icon-button (click)="drawer.open()">
-          <mat-icon>menu</mat-icon>
-        </button>
-      }
-    </mat-toolbar>
-    <main>
-      <p>core works!</p>
-    </main>
-  </mat-drawer-content>
-</mat-drawer-container>
+<p>core works!</p>
