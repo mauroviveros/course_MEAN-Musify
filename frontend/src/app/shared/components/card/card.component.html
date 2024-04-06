@@ -1,0 +1,11 @@
+<mat-card matRipple>
+  <img
+    mat-card-image
+    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    alt="Photo of a Shiba Inu"
+    [class.circle]="circle" />
+  <mat-card-content>
+    <mat-card-title>{{ name | titlecase }}</mat-card-title>
+    <mat-card-subtitle>{{ description | titlecase }}</mat-card-subtitle>
+  </mat-card-content>
+</mat-card>

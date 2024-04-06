@@ -1,0 +1,21 @@
+
+:host{
+  width: fit-content;
+  height: fit-content;
+}
+img{
+  padding: .5rem;
+  height: 11rem;
+  width: 11rem;
+  border-radius: 1rem ;
+  &.circle{
+    border-radius: 50%;
+  }
+}
+mat-card{
+  width: 11rem;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  &:hover{ background-color: rgba(0, 0, 0, 0.05); }
+}
