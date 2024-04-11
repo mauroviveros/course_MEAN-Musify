@@ -7,9 +7,9 @@ img{
   padding: .5rem;
   height: 11rem;
   width: 11rem;
-  border-radius: 1rem ;
+  border-radius: 1rem !important;
   &.circle{
-    border-radius: 50%;
+    border-radius: 50% !important;
   }
 }
 mat-card{
